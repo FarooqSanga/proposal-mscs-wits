@@ -67,14 +67,14 @@
 \begin{center}
   \vfill
   {
-  \huge \bf \textsc{Title of Research}\\
+  \huge \bf \textsc{The Development of Cyber Threat Intelligence System Framework for the Mining Industry}\\
   \large Subtitle\\[20pt]
   \large School of Computer Science \& Applied Mathematics\\
   \large University of the Witwatersrand\\[20pt]
   \normalsize
-  Your Name\\
-  Your Student Number\\[20pt]
-  Supervised by Dr McProfessorFace\\[10pt]
+  MUHAMMAD UMER FAROOQ\\
+  2925331\\[20pt]
+  Supervised by Dr Helen Robertson\\[10pt]
   \today
   }
 
@@ -82,7 +82,7 @@
   \vfill
   \includegraphics[width=1.5cm]{images/wits}
   \vspace{10pt}\\
-  \small{Ethics Clearance Number: XX/XX/XX}\\[10pt]
+  % \small{Ethics Clearance Number: XX/XX/XX}\\[10pt]
   \small{A proposal submitted to the Faculty of Science, University of the Witwatersrand, Johannesburg,
 in partial fulfilment of the requirements for the degree of Bachelor of Science with Honours}\\
 \end{center}
@@ -99,14 +99,18 @@ Abstract things....
 
 \phantomsection
 \begin{declaration}
-I, ---------, hereby declare the contents of this research proposal to be my own work.
-This proposal is submitted for the degree of Bachelor of Science with Honours in Computer Science at the University of the Witwatersrand.
+I, Muhammad Umer Farooq, hereby declare the contents of this research proposal to be my own work.
+This proposal is submitted for the Master of Science by Dissertation in Computer Science at the University of the Witwatersrand.
 This work has not been submitted to any other university, or for any other degree.
 \end{declaration}
 
 \phantomsection
 \begin{acknowledgements}
-Thanks World.
+I would like to express my deepest gratitude to my supervisors, Dr. Helen Robertson from the School of Computer Science and Mathematics, and Dr. M. Ahsan Mahboob, the Head of Sibanye Stillwater Digital Mining Laboratory (DigiMine), for their invaluable guidance and support throughout my research journey.
+
+Dr. Robertson’s expertise and insightful feedback were instrumental in refining my work, and her encouragement was a constant source of motivation. I am equally grateful to Dr. Mahboob for his mentorship and for providing me with the opportunity to collaborate within the DigiMine lab, where his leadership and profound knowledge in the field greatly enhanced my research experience.
+
+Their unwavering support, constructive feedback, and encouragement have been crucial to the successful completion of this proposal. I am deeply appreciative of their time and efforts, and I feel privileged to have worked under their guidance.
 \end{acknowledgements}
 
 
@@ -123,32 +127,66 @@ Thanks World.
 \listoftables
 \newpage
 \pagenumbering{arabic}
-
+% Chapter 1
 \chapter{Introduction}
-\section{Hello World}
-Introduction things...\\
-\section{Another Section}
-\subsection{This is a Subsection}
-\subsubsection{This is a subsubsection}
-This is just a paragraph
-\subsection{A Subsection about Citation Style}
-Citations are important. Citation style for Computer Science is:
-\begin{itemize}
-\item When used in the text, use the authors with the date in brackets:\\ \citet{klein17} say very important things.
-\item When used as a reference after a face, put everything in brackets:\\ Import things are true \citep{klein17}.
-\end{itemize}
-
-\subsection{Compiling}
-Remember to compile multiple times to resolve references. Usually:
-\begin{verbatim}
-pdflatex file.tex
-bibtex file
-pdflatex file.tex
-pdflatex file.tex
-\end{verbatim}
+The Mining Industry, a vital part of the global economy, increasingly depends on digital technologies to improve operations, safety, and sustainability. However, this reliance on technology exposes the industry to significant cyber threats that can disrupt operations, compromise safety, and cause financial loss and environmental harm. Given these risks, the need for effective cyber threat detection in mining is more urgent than ever. Traditional and reactive cybersecurity measures often fail to address the complex and evolving threats specific to the mining sector. This has led to the growing importance of Cyber Threat Intelligence (CTI) systems, which proactively detect, analyze, and respond to potential threats. These systems collect and analyze data from multiple sources, helping organizations identify and mitigate risks before they cause damage. Despite potential threats, the urgency for effective cyber threat detection in mining has never been greater. Traditional reactive cybersecurity measures often fall short of addressing the sophisticated and evolving threats unique to the mining sector. This research aims to fill these gaps by designing a comprehensive Cyber Threat Intelligence System for the mining industry. The system will use advanced data analytics and machine learning to detect patterns and anomalies in threat data, improving the industry’s ability to defend against cyber-attacks. Additionally, this study will examine the ethical implications of implementing such a system, ensuring it meets both technical and ethical standards. By designing a CTI system tailored to the mining sector, this research will address a critical need and contribute to the broader field of cybersecurity.
+\section{Problem Statement}
+Problem Statement things...\\
+\section{Research Questions}
+Research Questions...\\
+\section{Research Aims and Objectives}
+Research Aims and Objectives...\\
+\subsection{Research Aims}
+Research Aims\\
+\subsection{Objectives}
+Research Objectives...\\
+\section{Limitations}
+\section{Overview}
 
 
-\chapter{Floats}
+% \subsubsection{This is a subsubsection}
+% This is just a paragraph
+% \subsection{A Subsection about Citation Style}
+% Citations are important. Citation style for Computer Science is:
+% \begin{itemize}
+% \item When used in the text, use the authors with the date in brackets:\\ \citet{klein17} say very important things.
+% \item When used as a reference after a face, put everything in brackets:\\ Import things are true \citep{klein17}.
+% \end{itemize}
+
+% \subsection{Compiling}
+% Remember to compile multiple times to resolve references. Usually:
+% \begin{verbatim}
+% pdflatex file.tex
+% bibtex file
+% pdflatex file.tex
+% pdflatex file.tex
+% \end{verbatim}
+
+% Chapter 2
+\chapter{Background and Literature Review}
+\section{Introduction}
+\subsection{Background}
+\subsection{Related Work}
+% Chapter 3
+\chapter{Research Methodology}
+\section{Research design}
+\section{Methods}
+\subsection{Pre-Modelling Phase}
+\subsection{Modelling Phase}
+\subsection{Post-Modelling Phase}
+\subsection{Experimental Setup}
+\subsection{Optimization and Training Models}
+\section{Limitations}
+\section{Ethical Considerations}
+
+
+% Chapter 4
+\chapter{Schedule of Work}
+% Chapter 5
+\chapter{Conclusion}
+
+
+
 \LaTeX\ decides how to place images. It also does the referencing for you as seen in \Cref{fig:thing1}. If you have subimages, they should have their own captions and labels -- look into the subfig or subfigure packages.
 
 \begin{figure}[ht]
@@ -192,8 +230,8 @@ CleverRef and VarioRef are helpful:
 	\item CleverRef+VarioRef: See \Vref{fig:thing1} and \Vref{tab:tab1}
 \end{itemize}
 
-\chapter{IDE/Editors}
-Overleaf has a great online editor for latex. Use it. 
+% \chapter{IDE/Editors}
+% Overleaf has a great online editor for latex. Use it. 
 
 \appendix
 \chapter{Extra Stuff}\label{app:extra}
