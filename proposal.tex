@@ -80,11 +80,11 @@
 
   \vfill
   \vfill
-  \includegraphics[width=1.5cm]{images/wits}
+  \includegraphics[width=1.5cm]{images/wits.png}
   \vspace{10pt}\\
   % \small{Ethics Clearance Number: XX/XX/XX}\\[10pt]
   \small{A proposal submitted to the Faculty of Science, University of the Witwatersrand, Johannesburg,
-in partial fulfilment of the requirements for the degree of Bachelor of Science with Honours}\\
+in partial fulfilment of the requirements for the degree of Master of Science (Dissertation) in Computer Science}\\
 \end{center}
 \vfill
 \newpage
@@ -133,13 +133,45 @@ The Mining Industry, a vital part of the global economy, increasingly depends on
 \section{Problem Statement}
 Problem Statement things...\\
 \section{Research Questions}
-Research Questions...\\
+% \section{Research Questions}
+
+The following research questions are formulated to guide the development of a comprehensive Cyber Threat Intelligence (CTI) system tailored for the mining industry:
+
+\begin{enumerate}
+    \item \textbf{How can a comprehensive framework for a Cyber Threat Intelligence (CTI) system be developed specifically for the mining industry?}
+    \begin{itemize}
+        \item What specific data sources, such as network logs and open-source intelligence feeds, are most relevant to the mining industry?
+        \item How can these data sources be effectively collected, aggregated, and processed to create a robust threat intelligence system?
+    \end{itemize}
+    
+    \item \textbf{What advanced data analysis and machine learning techniques can be applied to identify patterns and anomalies in collected threat data?}
+    \begin{itemize}
+        \item What machine learning models are most effective for detecting cyber threats in the context of mining industry operations?
+        \item How can the application of these techniques enhance threat detection and mitigation capabilities specific to the mining sector?
+    \end{itemize}
+
+    \item \textbf{What are the ethical considerations and implications of implementing a Cyber Threat Intelligence framework in the mining industry?}
+    \begin{itemize}
+        \item What are the primary ethical concerns related to data privacy, security, and surveillance in the mining industry?
+        \item How can these ethical issues be addressed to ensure compliance with regulations and industry standards?
+    \end{itemize}
+\end{enumerate}
 \section{Research Aims and Objectives}
+
+
 Research Aims and Objectives...\\
 \subsection{Research Aims}
 Research Aims\\
-\subsection{Objectives}
-Research Objectives...\\
+\section{Research Objectives}
+
+The objectives of this research are as follows:
+
+\begin{itemize}
+    \item Develop a comprehensive framework for a Cyber Threat Intelligence (CTI) System tailored specifically to the mining industry.
+    \item Efficiently collect, aggregate, and analyze threat data from various sources, including network logs and open-source intelligence feeds.
+    \item Apply advanced data analysis and machine learning techniques to identify patterns and anomalies within the collected threat data.
+    \item Critically examine and address the ethical considerations and implications of implementing a CTI framework within the mining industry.
+\end{itemize}
 \section{Limitations}
 \section{Overview}
 
@@ -170,12 +202,70 @@ Research Objectives...\\
 % Chapter 3
 \chapter{Research Methodology}
 \section{Research design}
-\section{Methods}
+\section{Methods}The research will follow a comprehensive, multi-phase approach tailored to address the
+unique cybersecurity challenges encountered by the mining industry. The process will begin
+with a requirements analysis, which will involve collecting stakeholder opinions and reviewing
+relevant literature to identify specific needs and gaps in current cybersecurity frameworks.
+Then, during the framework development phase, a customized architecture will be developed,
+integrating data from various sources, such as network logs and open-source intelligence
+feeds. Following this, real-time threat data will be collected and aggregated, which will then
+be analyzed using advanced machine learning techniques like to detect patterns, classifying
+and clustering the logs and anomalies. Ethical considerations will be carefully examined to
+ensure compliance with industry regulations and data privacy standards. A prototype of the
+CTI System will be developed and tested in a controlled environment to evaluate its
+effectiveness. Then, the system’s performance will be assessed, and detailed documentation
+will be prepared, offering insights and recommendations for practical implementation within
+the mining industry.
+
 \subsection{Pre-Modelling Phase}
+The pre-modelling phase focuses on the initial setup and preparation needed to build an effective Cyber Threat Intelligence (CTI) system. It includes data collection, data preprocessing, and defining the threat intelligence goals specific to the mining industry.
+
+\begin{itemize}
+    \item \textbf{Data Collection}: Raw data is collected from various sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports. In mining operations, sensor and operational data can also be leveraged to detect abnormal patterns in the network.
+    \item \textbf{Data Preprocessing}: The collected data is cleaned and transformed into a usable format. This involves handling missing data, removing duplicates, and normalizing data formats. Feature extraction techniques such as Principal Component Analysis (PCA) can be applied to reduce noise.
+    \item \textbf{Data Labeling}: For supervised learning, historical data is labeled by domain experts as normal or malicious based on past incidents.
+    \item \textbf{Goal Definition}: Specific objectives are defined, such as detecting ransomware, Advanced Persistent Threats (APTs), or insider threats, which will influence the models and algorithms chosen in the next phase.
+\end{itemize}
+
 \subsection{Modelling Phase}
+The modelling phase involves building machine learning models that predict and detect cyber threats based on the pre-processed data.
+
+\begin{itemize}
+    \item \textbf{Model Selection}: Machine learning models such as decision trees, random forests, support vector machines (SVMs), or neural networks are selected based on the data type and threat scenarios.
+    \item \textbf{Feature Engineering}: Relevant features are engineered to improve the model’s ability to detect cyber threats. Time-series analysis may be used for real-time threat detection in operational environments.
+    \item \textbf{Model Training}: Models are trained using supervised learning on labeled data or unsupervised learning on unlabelled data to detect anomalies. Cross-validation techniques are used to avoid overfitting.
+    \item \textbf{Threat Classification}: The trained model is used to classify network activity or system behavior into predefined threat categories (e.g., malware, phishing, Denial of Service attacks).
+\end{itemize}
+
 \subsection{Post-Modelling Phase}
+After building the models, the post-modelling phase focuses on evaluation, validation, and deployment.
+
+\begin{itemize}
+    \item \textbf{Model Validation}: Models are validated using test datasets. Key performance metrics such as accuracy, precision, recall, and F1 score are used to measure the model’s effectiveness.
+    \item \textbf{Model Tuning}: Hyperparameter tuning (e.g., grid search or random search) is used to optimize the model. This process involves adjusting key parameters to improve performance.
+    \item \textbf{Deployment Readiness}: Once validated, the model is integrated into existing systems (e.g., Security Information and Event Management systems) for real-time threat detection. The model undergoes stress testing to ensure it can handle real-time data streams.
+\end{itemize}
+
 \subsection{Experimental Setup}
+The experimental setup defines how the CTI models are tested in a controlled environment before full deployment.
+
+\begin{itemize}
+    \item \textbf{Test Environment Setup}: A simulated or controlled mining network is created, including virtual machines, network traffic simulators, and log generators to mimic realistic scenarios.
+    \item \textbf{Data Injection}: Historical data and simulated attack data are injected into the system to evaluate its ability to detect and respond to various threats.
+    \item \textbf{Performance Measurement}: The system’s performance is measured using metrics such as detection rate, false alarm rate, and response time. Resource usage (CPU, memory) is also monitored to ensure scalability.
+    \item \textbf{Comparison with Existing Systems}: The CTI framework’s performance is compared to existing cybersecurity systems in the mining industry to assess improvements.
+\end{itemize}
+
 \subsection{Optimization and Training Models}
+The optimization and training phase focuses on refining the models to maximize their performance and efficiency.
+
+\begin{itemize}
+    \item \textbf{Hyperparameter Optimization}: Techniques such as grid search or Bayesian optimization are used to identify the best hyperparameters (e.g., learning rates, kernel functions) to improve detection accuracy.
+    \item \textbf{Continuous Learning}: As new threats emerge, the model is retrained with updated data. Incremental learning or transfer learning methods may be used to update the model without complete retraining.
+    \item \textbf{Efficiency Optimization}: The model is optimized for real-time performance through techniques such as model pruning, quantization, or the use of lightweight architectures.
+    \item \textbf{Final Model Training}: The final optimized model is trained on the entire dataset to ensure robustness and accuracy. It is then ready for deployment into the CTI system.
+\end{itemize}
+
 \section{Limitations}
 \section{Ethical Considerations}
 
@@ -184,54 +274,47 @@ Research Objectives...\\
 \chapter{Schedule of Work}
 % Chapter 5
 \chapter{Conclusion}
+The CTI System for the Mining Industry aims to bridge the gap between the mining industry's unique operational demands and the growing need for robust cybersecurity measures. By developing a tailored CTI System, the study seeks to provide an architecture design of a CTI System. The development of the CTI System will enhance the ability to detect and respond to cyber threats proactively in the mining industry. The CTI System's integration of advanced data analytics and machine learning will offer more precise and real-time action against evolving threats. Additionally, this research will address ethical and regulatory concerns and ensure the proposed solution is effective and compliant with mining industry standards.
+The findings from this research will contribute significantly to both the mining industry and the broader field of cybersecurity. By providing a specialized system for cyber threat intelligence, this study will help safeguard critical mining operations, protecting both assets and the environment. The lessons learned and the methodologies developed can serve as a model for other industries facing similar cybersecurity challenges, marking a step forward in the ongoing effort to secure vital industrial infrastructure.
 
 
 
-\LaTeX\ decides how to place images. It also does the referencing for you as seen in \Cref{fig:thing1}. If you have subimages, they should have their own captions and labels -- look into the subfig or subfigure packages.
+% \LaTeX\ decides how to place images. It also does the referencing for you as seen in \Cref{fig:thing1}. If you have subimages, they should have their own captions and labels -- look into the subfig or subfigure packages.
 
+% Including the image with correct file extension
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.1\linewidth]{images/wits}
-	\caption{This is an image}
-	\label{fig:thing1}
+  \centering
+  \includegraphics[width=0.1\linewidth]{images/wits.png}  % If located in the "images" folder
+  \caption{This is an image}
+  \label{fig:thing1}
 \end{figure}
 
-Figure captions are at the bottom. Table title are at the top of the table as seen in \Vref{tab:tab1}. There is a package called BookTabs which is \textit{way} better for tables and you should learn how to use that instead.
+Figure captions are at the bottom. Table titles are at the top of the table as seen in \Vref{tab:tab1}. 
 
 \begin{table}[p]
-	\centering
-	\caption{Table Name}
-	\label{tab:tab1}
-\begin{tabular}{cc}
-	\hline
-	Col1 & Col2\\
-	\hline\hline 
-	R0,C0 & R0,C1 \\ 
-	R1,C0 & R1,C1 \\ 
-	\hline
-\end{tabular} 
+  \centering
+  \caption{Table Name}
+  \label{tab:tab1}
+  \begin{tabular}{cc}
+      \hline
+      Col1 & Col2\\
+      \hline\hline 
+      R0,C0 & R0,C1 \\ 
+      R1,C0 & R1,C1 \\ 
+      \hline
+  \end{tabular} 
 \end{table}
-
-Usually let \LaTeX\ handle the placement of floats unless you \textit{really} need to force it to do something else. The \texttt{float} package used above allows you to use \texttt{H} as the placement which means \textit{here and only here}. When using the float package, the placement options are:
-\begin{enumerate}
-\item h -- a gentle nudge to place it here if possible
-\item t -- top of a page
-\item b -- bottom of a page
-\item H -- here and only here, do not move it at all
-\item p -- on its own page
-\end{enumerate}
-
 
 \chapter{Some Referencing Tricks}
 CleverRef and VarioRef are helpful:
 \begin{itemize}
-	\item Normal Ref: See Figure \ref{fig:thing1}
-	\item CleverRef: See \Cref{fig:thing1} and \Cref{tab:tab1}
-	\item CleverRef+VarioRef: See \Vref{fig:thing1} and \Vref{tab:tab1}
+  \item Normal Ref: See Figure \ref{fig:thing1}
+  \item CleverRef: See \Cref{fig:thing1} and \Cref{tab:tab1}
+  \item CleverRef+VarioRef: See \Vref{fig:thing1} and \Vref{tab:tab1}
 \end{itemize}
 
-% \chapter{IDE/Editors}
-% Overleaf has a great online editor for latex. Use it. 
+\chapter{IDE/Editors}
+Overleaf has a great online editor for latex. Use it. 
 
 \appendix
 \chapter{Extra Stuff}\label{app:extra}
