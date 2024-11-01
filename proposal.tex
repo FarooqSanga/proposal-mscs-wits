@@ -68,23 +68,35 @@
   \vfill
   {
   \huge \bf \textsc{The Development of Cyber Threat Intelligence System Framework for the Mining Industry}\\
-  \large Subtitle\\[20pt]
-  \large School of Computer Science \& Applied Mathematics\\
-  \large University of the Witwatersrand\\[20pt]
+  \rule{\linewidth}{0.5pt}
+
+%   \large Subtitle\\[20pt]
+
+
   \normalsize
+  Proposed by:\\
   MUHAMMAD UMER FAROOQ\\
   2925331\\[20pt]
-  Supervised by Dr Helen Robertson\\[10pt]
+  Supervisors:\\[10pt]
+  Dr. Helen Robertson\\[10pt]
+  Dr. Ahsan Mahboob\\[10pt]
   \today
   }
+  \vfill
 
   \vfill
+  \includegraphics[width=2.5cm]{images/wits.png}
   \vfill
-  \includegraphics[width=1.5cm]{images/wits.png}
-  \vspace{10pt}\\
+  \vfill
+
+%   \vspace{10pt}\\
   % \small{Ethics Clearance Number: XX/XX/XX}\\[10pt]
   \small{A proposal submitted to the Faculty of Science, University of the Witwatersrand, Johannesburg,
 in partial fulfilment of the requirements for the degree of Master of Science (Dissertation) in Computer Science}\\
+\rule{\linewidth}{0.5pt}
+\large School of Computer Science \& Applied Mathematics\\
+\large University of the Witwatersrand\\[20pt]
+
 \end{center}
 \vfill
 \newpage
@@ -106,7 +118,7 @@ This work has not been submitted to any other university, or for any other degre
 
 \phantomsection
 \begin{acknowledgements}
-I would like to express my deepest gratitude to my supervisors, Dr. Helen Robertson from the School of Computer Science and Mathematics, and Dr. M. Ahsan Mahboob, the Head of Sibanye Stillwater Digital Mining Laboratory (DigiMine), for their invaluable guidance and support throughout my research journey.
+I would like to express my deepest gratitude to my supervisors, Dr. Helen Robertson from the School of Computer Science and Mathematics, and Dr. M. Ahsan Mahboob, the Head of Sibanye Stillwater Digital Mining Laboratory (DigiMine), for their invaluable guidance and support throughout my research journey. I would like to thatnk and acknowledge the financial support provided by the Sibanye-Stillwater Digital Mining Laboratory (DigiMine), Wits Mining Institute (WMI).
 
 Dr. Robertson’s expertise and insightful feedback were instrumental in refining my work, and her encouragement was a constant source of motivation. I am equally grateful to Dr. Mahboob for his mentorship and for providing me with the opportunity to collaborate within the DigiMine lab, where his leadership and profound knowledge in the field greatly enhanced my research experience.
 
@@ -129,32 +141,19 @@ Their unwavering support, constructive feedback, and encouragement have been cru
 \pagenumbering{arabic}
 % Chapter 1
 \chapter{Introduction}
-The Mining Industry, a vital part of the global economy, increasingly depends on digital technologies to improve operations, safety, and sustainability. However, this reliance on technology exposes the industry to significant cyber threats that can disrupt operations, compromise safety, and cause financial loss and environmental harm. Given these risks, the need for effective cyber threat detection in mining is more urgent than ever. Traditional and reactive cybersecurity measures often fail to address the complex and evolving threats specific to the mining sector. This has led to the growing importance of Cyber Threat Intelligence (CTI) systems, which proactively detect, analyze, and respond to potential threats. These systems collect and analyze data from multiple sources, helping organizations identify and mitigate risks before they cause damage. Despite potential threats, the urgency for effective cyber threat detection in mining has never been greater. Traditional reactive cybersecurity measures often fall short of addressing the sophisticated and evolving threats unique to the mining sector. This research aims to fill these gaps by developping a comprehensive Cyber Threat Intelligence System Framework for the mining industry. The Framework will use advanced data analytics and machine learning to detect patterns and anomalies in threat data, improving the industry’s ability to defend against cyber-attacks. Additionally, this study will examine the ethical implications of implementing such a system, ensuring it meets both technical and ethical standards. By designing a CTI system tailored to the mining sector, this research will address a critical need and contribute to the broader field of cybersecurity. In Figure:\ref{fig:thing1}, World Economic Forum Global Risks Perception Survey 2023-2024 indicating a wide subset of the global population to potential digital and physical exploitation.
+The Mining Industry is as important part of the global economy. It depends on digital technologies to improve operations, safety, and sustainability. However, this reliance on technology exposes the industry to significant cyber threats that can disrupt operations, compromise safety, and cause financial loss and environmental harm. Given these risks, the need for effective cyber threat detection in mining is more urgent than ever. Traditional and reactive cybersecurity measures often fail to address the complex and evolving threats specific to the mining sector. This has led to the growing importance of Cyber Threat Intelligence (CTI) System for the mining sector, which proactively detect, analyze, and respond to potential threats using intelligence feeds. These systems collect and analyze data from multiple sources, helping organizations identify and mitigate risks before they cause damage. Despite potential threats, the urgency for effective cyber threat detection in mining has never been greater. Traditional reactive cybersecurity measures used in the sector often fall short of addressing the sophisticated and evolving threats unique to the mining sector. This research aims to fill these gaps by developping tailored Cyber Threat Intelligence System Framework specifically for the mining industry. The CTI Framework will use advanced data analytics and machine learning algorithms to detect patterns and anomalies in threats datam and it will improve the industry’s ability to defend against cyber-attacks. Additionally, this study will examine the ethical implications of implementing such a system, ensuring it meets both technical and ethical standards. By designing a CTI system tailored to the mining sector, this research will address a critical need and contribute to the broader field of cybersecurity. In Figure: \ref{fig:thing1}, World Economic Forum Global Risks Perception Survey 2023-2024 indicating a wide subset of the global population to potential digital and physical exploitation.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.0\linewidth]{images/world-economic-forum-global-risks.png}  % If located in the "images" folder
-    \caption{World Economic Forum Global Risks Perception Survey 2023-2024}
+    \caption{World Economic Forum Global Risks Analysis Survey 2023-2024}
     \label{fig:thing1}
 \end{figure}
 
 \section{Problem Statement}
-Mining Industry is a vital sector that plays a crucial role in global economic development. As
-mining operations are increasingly adopting digital technologies to enhance productivity,
-safety, and efficiency, they are becoming more vulnerable to cyber threats. These threats can
-disrupt operations, compromise sensitive data, cause financial loss, and even endanger lives
-and the environment.
-In August 2024, Evolution Mining, an Australian gold mining company, suffered a ransomware
-attack on its IT systems, which, though swiftly contained, underscored the industry's
-susceptibility to cyber threats. A month earlier, in July 2024, Sibanye-Stillwater also faced a
-cyberattack, leading to temporary IT system outages and manual processing in some of its
-operations. Similarly, in 2020, Norsk Hydro, a major metals and mining company, experienced
-a ransomware attack that caused significant operational shutdowns and millions in losses.
-Additionally, a 2017 attack on a South American mining firm compromised sensitive geological
-data, and in 2019, an Australian mining company suffered unauthorized access, disrupting
-automated processes and risking worker safety.
-These incidents highlight the urgent necessity for robust, proactive cybersecurity measures to
-protect the industry from evolving threats.
+Mining Industry plays a crucial role in global economic development. Mining operations are adopting digital technologies rapidly to enhance productivity, safety, and efficiency. These are becoming more vulnerable to cyber threats. These threats can disrupt operations, can compromise sensitive data, can cause financial loss, and even it can endanger lives and the environment. Evolution Mining is an Australian gold mining company. It suffered a ransomware attack in August 2024 on its IT systems, which, though swiftly contained, underscored the industry's susceptibility to cyber threats. A month earlier, in July 2024, Sibanye-Stillwater also faced a cyberattack, leading to temporary IT system outages and manual processing in some of its operations. Norsk Hydro is a major metals and mining company. It experienced a ransomware attack in 2020 that caused significant operational shutdowns and millions in losses.
+An attack on a South American in 2017 on a mining firm compromised sensitive geological data. An Australian mining company suffered unauthorized access in 2019 which disrupted automated processes and risked worker safety.
+These incidents highlight the urgent necessity for robust, proactive cybersecurity measures to protect the industry from evolving threats.
 
 
 % \includegraphics[width=1.0\linewidth]{images/world-economic-forum-global-risks.png}  % If located in the "images" folder
@@ -165,44 +164,32 @@ protect the industry from evolving threats.
 \section{Research Questions}
 % \section{Research Questions}
 
-The following research questions are formulated to guide the development of a comprehensive Cyber Threat Intelligence (CTI) system tailored for the mining industry:
+The following questions are formulated to guide the research for development of a Cyber Threat Intelligence (CTI) system tailored for the mining industry:
 
 \begin{enumerate}
-    \item \textbf{How can a comprehensive framework for a Cyber Threat Intelligence (CTI) system be developed specifically for the mining industry?}
-    \begin{itemize}
-        \item What specific data sources, such as network logs and open-source intelligence feeds, are most relevant to the mining industry?
-        \item How can these data sources be effectively collected, aggregated, and processed to create a robust threat intelligence system?
-    \end{itemize}
-    
-    \item \textbf{What advanced data analysis and machine learning techniques can be applied to identify patterns and anomalies in collected threat data?}
-    \begin{itemize}
-        \item What machine learning models are most effective for detecting cyber threats in the context of mining industry operations?
-        \item How can the application of these techniques enhance threat detection and mitigation capabilities specific to the mining sector?
-    \end{itemize}
+    \item {How can a framework for a Cyber Threat Intelligence (CTI) system be developed specifically for the mining industry?}
+ \item {What strategies and technologies can be utilized to efficiently collect, aggregate, and analyze cyber threat data from sources like network logs and open-source intelligence feeds for the mining industry?}
 
-    \item \textbf{What are the ethical considerations and implications of implementing a Cyber Threat Intelligence framework in the mining industry?}
-    \begin{itemize}
-        \item What are the primary ethical concerns related to data privacy, security, and surveillance in the mining industry?
-        \item How can these ethical issues be addressed to ensure compliance with regulations and industry standards?
-    \end{itemize}
+    \item {How can advanced data analysis and machine learning techniques be applied to detect and analyze patterns and anomalies in cyber threat data specific to the mining sector?}
+
+    \item {What are the ethical challenges associated with implementing a CTI system in the mining industry, and how can these be effectively addressed to align with ethical standards and regulations?}
 \end{enumerate}
 \section{Research Aims and Objectives}
-
-
-Research Aims and Objectives...\\
+The adoption of digital technologies in the mining industry is essential for advancing productivity and safety. But it has also led it to significant cyber vulnerabilities. Cyber threats continuing to evolve. So, the need for a proactive approach to identify, analyze, and mitigate risks has become essential. The research aims and objectives focus on developing a robust CTI system Framework.\\
 \subsection{Research Aims}
-Research Aims\\
-\section{Research Objectives}
+The primary aim of this research is to develop an effective Cyber Threat Intelligence (CTI) framework for the mining industry, designed to enhance cybersecurity resilience. This research aims to mitigate the increasing cyber threat risks within the mining industry, which has seen a sharp rise in digital vulnerabilities as it adopts more advanced technologies by developing a CTI Framework tailored to mining industry. This aim involves creating a specialized CTI system that can detect and respond to cyber threats, ensuring the safety, security, and continuity of mining operations in an increasingly digitalized environment.
+\subsection{Research Objectives}
 
 The objectives of this research are as follows:
 
 \begin{itemize}
-    \item Develop a comprehensive framework for a Cyber Threat Intelligence (CTI) System tailored specifically to the mining industry.
-    \item Efficiently collect, aggregate, and analyze threat data from various sources, including network logs and open-source intelligence feeds.
-    \item Apply advanced data analysis and machine learning techniques to identify patterns and anomalies within the collected threat data.
-    \item Critically examine and address the ethical considerations and implications of implementing a CTI framework within the mining industry.
+    \item Develop a framework for a Cyber Threat Intelligence (CTI) System tailored specifically to the mining industry.
+    \item To collect, aggregate, and analyze threat data from various sources, including network logs and open-source intelligence feeds.
+    \item To apply advanced data analysis and machine learning techniques to identify patterns and anomalies within the collected threat data.
+    \item To examine and address the ethical considerations and implications of implementing a CTI framework within the mining industry.
 \end{itemize}
 \section{Limitations}
+The basic limitation of this research is the generalizability of its findings across the diverse operational environments within the mining industry. While the study aims to develop a robust Cyber Threat Intelligence (CTI) Framework tailored to mining, it relies on specific datasets and threat scenarios that may not comprehensively reflect all real-world contexts. Differences in mining operations, network architectures, and data characteristics across various geographical and organizational settings could impact the performance and applicability of the CTI framework. Additionally, the effectiveness of the proposed data analysis and machine learning techniques in detecting threats and enhancing model interpretability may vary depending on the complexity and heterogeneity of cyber threat data across mining entities. Consequently, while the research aspires to make valuable contributions to the mining sector's cybersecurity capabilities, its application to the broader landscape of mining operations may be constrained.\\
 \section{Overview}
 
 
@@ -227,7 +214,12 @@ The objectives of this research are as follows:
 % Chapter 2
 \chapter{Background and Literature Review}
 \section{Introduction}
+This chapter presents the background and literature review essential for developing a Cyber Threat Intelligence (CTI) framework tailored specifically for the mining industry. As industries become increasingly digitalized, the mining sector has not remained isolated from growing cybersecurity risks. This chapter begins by exploring the fundamental concepts of CTI systems and examines current approaches to cybersecurity in industrial sectors with a focus on mining. It discusses methods for collecting and analyzing cyber threat data, such as network logs and open-source intelligence, which are crucial for understanding the threat landscape specific to mining operations.
+
+A key objective of this research is to investigate advanced data analysis and machine learning techniques that can improve the detection of patterns and anomalies in cyber threats. The literature review assesses relevant studies that address these techniques within industrial contexts, including those applicable to mining. Finally, this chapter also critically examines ethical considerations in implementing a CTI framework, acknowledging the importance of aligning with ethical standards and regulations to ensure both data security and industry compliance. These topics collectively provide the foundation for addressing the research questions and objectives, setting the stage for a comprehensive, ethically-sound CTI system for the mining industry.
 \subsection{Background}
+Cybersecurity initiatives play a crucial role in strategic decision-making within Industry 4.0, aligning digital operations with sustainable solutions \citet{medoh2022future}. The integration of advanced computing, communication technologies, and IoT-cloud infrastructure into critical systems like the Smart Grid and industrial cyber-physical systems (CPS) has introduced significant cybersecurity challenges. The Smart Grid, designed to enhance power system efficiency and reliability, now faces vulnerabilities due to the extensive interconnection of electronic devices, which impacts infrastructure stability and security. Similarly, industrial CPSs—including systems for the mining industries—rely on SCADA for infrastructure monitoring and control, yet traditional SCADA lacks adequate security measures for the complexities of IoT-cloud integration. This transformation exposes critical infrastructures to cyber threats, demanding updated countermeasures, secure protocols, and extensive research to address evolving vulnerabilities in these next-generation systems \citet{wang2013cyber} and \citet{sajid2016cloud}.
+
 \subsection{Related Work}
 % Chapter 3
 \chapter{Research Methodology}
@@ -314,32 +306,32 @@ The findings from this research will contribute significantly to both the mining
 % Including the image with correct file extension
 
 
-Figure captions are at the bottom. Table titles are at the top of the table as seen in \Vref{tab:tab1}. 
+% Figure captions are at the bottom. Table titles are at the top of the table as seen in \Vref{tab:tab1}. 
 
-\begin{table}[p]
-  \centering
-  \caption{Table Name}
-  \label{tab:tab1}
-  \begin{tabular}{cc}
-      \hline
-      Col1 & Col2\\
-      \hline\hline 
-      R0,C0 & R0,C1 \\ 
-      R1,C0 & R1,C1 \\ 
-      \hline
-  \end{tabular} 
-\end{table}
+% \begin{table}[p]
+%   \centering
+%   \caption{Table Name}
+%   \label{tab:tab1}
+%   \begin{tabular}{cc}
+%       \hline
+%       Col1 & Col2\\
+%       \hline\hline 
+%       R0,C0 & R0,C1 \\ 
+%       R1,C0 & R1,C1 \\ 
+%       \hline
+%   \end{tabular} 
+% \end{table}
 
-\chapter{Some Referencing Tricks}
-CleverRef and VarioRef are helpful:
-\begin{itemize}
-  \item Normal Ref: See Figure \ref{fig:thing1}
-  \item CleverRef: See \Cref{fig:thing1} and \Cref{tab:tab1}
-  \item CleverRef+VarioRef: See \Vref{fig:thing1} and \Vref{tab:tab1}
-\end{itemize}
+% \chapter{Some Referencing Tricks}
+% CleverRef and VarioRef are helpful:
+% \begin{itemize}
+%   \item Normal Ref: See Figure \ref{fig:thing1}
+%   \item CleverRef: See \Cref{fig:thing1} and \Cref{tab:tab1}
+%   \item CleverRef+VarioRef: See \Vref{fig:thing1} and \Vref{tab:tab1}
+% \end{itemize}
 
-\chapter{IDE/Editors}
-Overleaf has a great online editor for latex. Use it. 
+% \chapter{IDE/Editors}
+% Overleaf has a great online editor for latex. Use it. 
 
 \appendix
 \chapter{Extra Stuff}\label{app:extra}
@@ -349,5 +341,8 @@ An appendix is useful when there is information that you need to include, but br
 
 \nocite{*}
 
+
 \bibliography{references}\addcontentsline{toc}{chapter}{References}
 \end{document}
+
+
