@@ -213,14 +213,95 @@ The basic limitation of this research is the generalizability of its findings ac
 
 % Chapter 2
 \chapter{Background and Literature Review}
+
 \section{Introduction}
-This chapter presents the background and literature review essential for developing a Cyber Threat Intelligence (CTI) framework tailored specifically for the mining industry. As industries become increasingly digitalized, the mining sector has not remained isolated from growing cybersecurity risks. This chapter begins by exploring the fundamental concepts of CTI systems and examines current approaches to cybersecurity in industrial sectors with a focus on mining. It discusses methods for collecting and analyzing cyber threat data, such as network logs and open-source intelligence, which are crucial for understanding the threat landscape specific to mining operations.
+This chapter discusses the background and prior research related to Cyber Threat Intelligence (CTI) systems in detail. This section provides the foundational understanding of CTI frameworks and situates the current research within the context of existing literature. The review covers the evolution of cybersecurity challenges in the mining industry, key components of CTI frameworks, and the use of data analytics and machine learning techniques to identify cyber threats. The chapter also discusses the ethical considerations and regulatory requirements relevant to developing a CTI system in a highly specialized industrial environment.
 
-A key objective of this research is to investigate advanced data analysis and machine learning techniques that can improve the detection of patterns and anomalies in cyber threats. The literature review assesses relevant studies that address these techniques within industrial contexts, including those applicable to mining. Finally, this chapter also critically examines ethical considerations in implementing a CTI framework, acknowledging the importance of aligning with ethical standards and regulations to ensure both data security and industry compliance. These topics collectively provide the foundation for addressing the research questions and objectives, setting the stage for a comprehensive, ethically-sound CTI system for the mining industry.
-\subsection{Background}
-Cybersecurity initiatives play a crucial role in strategic decision-making within Industry 4.0, aligning digital operations with sustainable solutions \citet{medoh2022future}. The integration of advanced computing, communication technologies, and IoT-cloud infrastructure into critical systems like the Smart Grid and industrial cyber-physical systems (CPS) has introduced significant cybersecurity challenges. The Smart Grid, designed to enhance power system efficiency and reliability, now faces vulnerabilities due to the extensive interconnection of electronic devices, which impacts infrastructure stability and security. Similarly, industrial CPSs—including systems for the mining industries—rely on SCADA for infrastructure monitoring and control, yet traditional SCADA lacks adequate security measures for the complexities of IoT-cloud integration. This transformation exposes critical infrastructures to cyber threats, demanding updated countermeasures, secure protocols, and extensive research to address evolving vulnerabilities in these next-generation systems \citet{wang2013cyber} and \citet{sajid2016cloud}.
+\section{Background}
+The mining industry's integration into the digital ecosystem has resulted in increased automation, improved safety measures, and enhanced operational efficiency. However, this dependence on digital technology has simultaneously made mining operations susceptible to sophisticated cyber threats. These threats are often complex, ranging from ransomware attacks that can halt operations to Advanced Persistent Threats (APTs) aimed at stealing valuable intellectual property.
 
-\subsection{Related Work}
+\subsection*{Industry 4.0 and Digitalization}
+The concept of Industry 4.0 has brought a digital transformation across sectors, including mining, through the use of IoT, machine learning, cloud computing, and big data. In mining, technologies like real-time monitoring systems, autonomous mining equipment, and predictive maintenance are becoming the norm. However, this transformation exposes critical infrastructure to cyber vulnerabilities \citep{wang2013cyber, sajid2016cloud}.
+
+\subsection*{Cyber Threat Landscape in Mining}
+The mining sector faces unique cyber threats due to the critical nature of its operations. Examples of past cyber incidents include ransomware attacks and data breaches targeting geological data or disrupting automated processes. High-profile cases like the ransomware attack on Evolution Mining in 2024 and Norsk Hydro's incident in 2020 illustrate the potential impact on productivity and financial stability.
+
+\subsection*{SCADA Systems and Vulnerabilities}
+Supervisory Control and Data Acquisition (SCADA) systems are widely used in mining to monitor and control physical processes. However, traditional SCADA systems lack the security measures necessary to counter the vulnerabilities introduced by cloud and IoT integrations. The need for an advanced CTI system becomes evident, as these vulnerabilities can lead to catastrophic failures in mining operations \citep{wang2013cyber}.
+
+\subsection*{Cybersecurity Challenges Unique to Mining Operations}
+\begin{itemize}
+    \item \textbf{Remote and Harsh Environments:} Mining operations are often located in remote areas with limited connectivity, making it challenging to deploy and maintain comprehensive cybersecurity solutions.
+    \item \textbf{Legacy Systems and Modernization:} Many mining facilities still use outdated systems that are difficult to secure, and updating these without causing operational disruptions is a significant challenge.
+    \item \textbf{Supply Chain Vulnerabilities:} The mining industry relies heavily on third-party vendors and contractors, which introduces additional security risks and necessitates robust supply chain security measures.
+\end{itemize}
+
+\section{Related Work}
+\subsection{Cyber Threat Intelligence (CTI) Frameworks}
+CTI frameworks have emerged as crucial solutions for enhancing the proactive capabilities of cybersecurity defenses. They leverage data collection, analysis, and dissemination to provide actionable insights into emerging threats. Various researchers have proposed different components for CTI frameworks, each tailored to address specific cybersecurity needs.
+
+\subsubsection*{Existing Framework Comparison}
+
+\subsubsection*{CTI Framework Adoption in Other Critical Infrastructures}
+
+
+\subsubsection*{Components of a CTI Framework}
+\paragraph{CTI Data Collector}
+\textit{Role and Functionality:} The data collector component is responsible for aggregating raw cyber threat data from multiple sources. These include OSINT feeds, network logs, vendor-provided threat intelligence, and even data from the dark web. The data collected must be diverse and comprehensive to ensure accurate threat detection.
+
+\textit{Literature Examples:}
+\begin{itemize}
+    \item \citep{lee2016open} : Developed an OSINT-focused data collection strategy that ensures timely and relevant threat information. Their framework emphasizes preparing and implementing an OSINT plan before gathering and analyzing data from open sources.
+    \item \citep{ryandy2020xt}: Outlined a systematic approach to data collection, emphasizing the importance of processing, analysis, and evaluation to ensure that the collected data is usable for threat intelligence purposes.
+    \item \citep{tundis2022feature}: Focused on feature selection and OSINT source identification, demonstrating that a well-designed data collection system can significantly impact the quality of threat intelligence.
+\end{itemize}
+
+\paragraph{Analysis Medium}
+\textit{Role and Functionality:} This component transforms raw data into actionable intelligence through pre-processing, correlation analysis, pattern detection, and anomaly recognition. The analysis medium uses algorithms and heuristics to classify and prioritize threats.
+
+\textit{Literature Examples:}
+\begin{itemize}
+    \item \citep{kim2016know}: Emphasized the importance of structured data analysis, correlation techniques, and the use of YARA rules for malware detection. Their research shows how the analysis medium can derive meaningful insights from large datasets.
+    \item \citep{noor2019machine}: Proposed an analysis approach that incorporates cyber threat attribution, helping organizations understand the origin and intent behind cyber-attacks.
+    \item \citep{islam2022smartvalidator}: Integrated network data with a threat detector and alert validation system, highlighting the necessity of real-time data analysis to reduce false positives and improve threat response.
+\end{itemize}
+
+\paragraph{Information Platform}
+\textit{Role and Functionality:} This component acts as the user interface and decision-support system for disseminating analyzed intelligence. It allows for threat information sharing, real-time monitoring, and supports collaborative efforts among stakeholders.
+
+\textit{Literature Examples:}
+\begin{itemize}
+    \item \citep{bohm2018graph}: Designed a CTI information platform with features like data filtering, mapping, rendering, and user interaction. Their focus was on making threat intelligence more accessible and actionable for security teams.
+    \item \citep{kim2016know}: Focused on the conversion of data into security rules, making the information platform a critical part of cybersecurity operations. This framework highlighted the use of automated security updates based on the analyzed intelligence.
+    \item \citep{papastergiou2021handling}: Proposed a comprehensive information-sharing model that integrates deep and dark web mining, live monitoring, and data protection orchestrators. Their approach, which included the HybridNet and ShareNet components, emphasizes the importance of robust and secure information dissemination.
+\end{itemize}
+
+\subsection{Advanced Data Analytics and Machine Learning in CTI}
+The application of advanced data analytics and machine learning in CTI frameworks is becoming increasingly prevalent. These technologies enhance the capability to detect patterns, classify threats, and predict future cyber-attacks.
+
+\subsection*{Machine Learning Techniques}
+Algorithms such as decision trees, support vector machines (SVMs), and neural networks are commonly used for threat detection. Unsupervised learning methods, like clustering, help in identifying unknown threat patterns, while supervised learning assists in classifying known threats.
+
+\subsection*{Data Fusion and Anomaly Detection}
+Techniques like time-series analysis and real-time data fusion are essential for identifying anomalies in network behavior. For instance, \citet{islam2022smartvalidator} utilized data from both network and business operations to validate alerts and ensure that only genuine threats are flagged.
+
+\subsection*{Case Studies in Industrial Settings}
+Review studies that have successfully implemented machine learning in critical infrastructure protection, such as detecting anomalies in SCADA systems or preventing ransomware attacks. Discuss how these methods can be adapted to the mining industry.
+
+\subsection*{Collaborative Cybersecurity Initiatives and Intelligence Sharing}
+\begin{itemize}
+    \item \textbf{Industry Partnerships and Alliances:} The role of collaborations among mining companies and cybersecurity organizations in improving threat intelligence capabilities.
+    \item \textbf{Information Sharing Platforms:} The significance of platforms like ISACs (Information Sharing and Analysis Centers) that facilitate threat intelligence sharing across the industry.
+    \item \textbf{Global Cybersecurity Alliances:} Participation in global threat intelligence networks to stay updated on emerging cross-border cyber threats.
+\end{itemize}
+
+\subsection*{Future Trends and Emerging Threats}
+\begin{itemize}
+    \item \textbf{Zero Trust Architecture:} Exploring the adoption of zero trust principles in securing industrial networks.
+    \item \textbf{Blockchain Technology:} The potential of blockchain for securing data and communications in mining operations.
+    \item \textbf{Quantum Computing Risks:} How advancements in quantum computing could pose new cybersecurity threats to the mining industry.
+\end{itemize}
+
 % Chapter 3
 \chapter{Research Methodology}
 \section{Research design}
