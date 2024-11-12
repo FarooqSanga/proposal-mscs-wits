@@ -110,7 +110,7 @@ in partial fulfilment of the requirements for the degree of Master of Science (D
 
 \phantomsection
 \begin{abstract}
-The mining industry's growing reliance on digital technologies has significantly increased its vulnerability to cyber threats, which can lead to severe operational, financial, and environmental consequences. This research aims to develop a comprehensive Cyber Threat Intelligence (CTI) system tailored specifically for the mining sector, utilizing advanced data analytics and machine learning to enhance cyber threat detection and mitigation capabilities. A mixed-methods approach combining systematic literature reviews, empirical testing, and qualitative analyses ensures a robust framework that addresses both technical and ethical considerations. The proposed CTI system will gather, aggregate, and analyze data from diverse sources, such as network logs and open-source intelligence feeds, employing machine learning techniques to identify patterns and anomalies indicative of cyber threats. This research also critically examines the ethical implications of deploying such systems, ensuring compliance with industry standards and regulations. By integrating stakeholder feedback throughout the development and implementation phases, the study ensures that the CTI system is practical, effective, and aligned with the mining industry’s specific needs. The anticipated outcomes include improved resilience against cyber threats, minimized risk of operational disruptions, and enhanced protection of sensitive data and infrastructure. This research contributes to the broader field of cybersecurity in critical infrastructure, providing valuable insights into the application of CTI systems within industry-specific contexts.
+The mining industry's growing reliance on digital technologies has significantly increased its vulnerability to cyber threats, which can lead to severe operational, financial, and environmental consequences. This research aims to develop a Cyber Threat Intelligence (CTI) framwork tailored specifically for the mining sector. CTI Framework for mining industry will utilize advanced data analytics and machine learning to enhance cyber threat detection and mitigation capabilities. A mixed-methods approach combining systematic literature reviews, empirical testing, and qualitative analyses ensures a robust framework that addresses both technical and ethical considerations. The proposed CTI system will gather, aggregate, and analyze data from diverse sources, such as network logs and open-source intelligence feeds, employing machine learning techniques to identify patterns and anomalies indicative of cyber threats. This research also critically examines the ethical implications of deploying such systems, ensuring compliance with industry standards and regulations. By integrating stakeholder feedback throughout the development and implementation phases, the study ensures that the CTI system is practical, effective, and aligned with the mining industry’s specific needs. The anticipated outcomes include improved resilience against cyber threats, minimized risk of operational disruptions, and enhanced protection of sensitive data and infrastructure. This research contributes to the broader field of cybersecurity in critical infrastructure, providing valuable insights into the application of CTI systems within industry-specific contexts.
 \end{abstract}
 
 \phantomsection
@@ -276,7 +276,12 @@ Existing Cyber Threat Intelligence (CTI) frameworks vary in structure, focus, an
 \textit{Focus:} Standardized threat data formatting and sharing. \\
 \textit{Components:} Structured Threat Information Expression (STIX) provides a common language for sharing threat intelligence, while Trusted Automated Exchange of Indicator Information (TAXII) facilitates secure and automated data exchange. \\
 \textit{Adoption:} Primarily used by organizations seeking interoperability in threat data sharing, enhancing collaboration across different cybersecurity platforms.
-
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/stix-system.png}  % If located in the "images" folder
+    \caption{\citep{barnum2012standardizing} Core Use Cases Targeted by STIX}
+    \label{fig:thing1}
+\end{figure}
 \paragraph{OpenIOC \citet{janotistrategic}}
 \textit{Focus:} Rapid identification of indicators of compromise (IOCs). \\
 \textit{Components:} Offers a framework for describing, archiving, and sharing threat intelligence specific to forensic artifacts and attack indicators. \\
@@ -448,24 +453,24 @@ The research will follow a comprehensive, multi-phase approach tailored to addre
 The pre-modelling phase focuses on the initial setup and preparation needed to build an effective Cyber Threat Intelligence (CTI) system. It includes data collection, data preprocessing, and defining the threat intelligence goals specific to the mining industry.
 
 \begin{itemize}
-    \item \textbf{Data Collection}: Raw data is collected from various sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports. In mining operations, sensor and operational data can also be leveraged to detect abnormal patterns in the network.
-    \item \textbf{Data Preprocessing}: The collected data is cleaned and transformed into a usable format. This involves handling missing data, removing duplicates, and normalizing data formats. Feature extraction techniques such as Principal Component Analysis (PCA) can be applied to reduce noise.
-    \item \textbf{Data Labeling}: For supervised learning, historical data is labeled by domain experts as normal or malicious based on past incidents.
-    \item \textbf{Goal Definition}: Specific objectives are defined, such as detecting ransomware, Advanced Persistent Threats (APTs), or insider threats, which will influence the models and algorithms chosen in the next phase.
+    \item \textbf{Data Collection}: We will collect raw data from various sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports. In mining operations, sensor and operational data can also be leveraged to detect abnormal patterns in the network.
+    \item \textbf{Data Preprocessing}: We will clean and transform into a usable format. This will involve handling missing data, removing duplicates, and normalizing data formats. Feature extraction techniques such as Principal Component Analysis (PCA) can be applied to reduce noise.
+    \item \textbf{Data Labeling}: For supervised learning, historical data will be labeled by domain experts as normal or malicious based on past incidents.
+    \item \textbf{Goal Definition}: Specific objectives will be defined, such as detecting ransomware, Advanced Persistent Threats (APTs), or insider threats, which will influence the models and algorithms chosen in the next phase.
 \end{itemize}
 
 \subsection{Modelling Phase}
-The modelling phase involves building machine learning models that predict and detect cyber threats based on the pre-processed data.
+The modelling phase will involve building machine learning models that will predict and detect cyber threats based on the pre-processed data.
 
 \begin{itemize}
-    \item \textbf{Model Selection}: Machine learning models such as decision trees, random forests, support vector machines (SVMs), or neural networks are selected based on the data type and threat scenarios.
-    \item \textbf{Feature Engineering}: Relevant features are engineered to improve the model’s ability to detect cyber threats. Time-series analysis may be used for real-time threat detection in operational environments.
-    \item \textbf{Model Training}: Models are trained using supervised learning on labeled data or unsupervised learning on unlabelled data to detect anomalies. Cross-validation techniques are used to avoid overfitting.
-    \item \textbf{Threat Classification}: The trained model is used to classify network activity or system behavior into predefined threat categories (e.g., malware, phishing, Denial of Service attacks).
+    \item \textbf{Model Selection}: Machine learning models such as decision trees, random forests, support vector machines (SVMs), or neural networks will be selected based on the data type and threat scenarios.
+    \item \textbf{Feature Engineering}: Relevant features will be engineered to improve the model’s ability to detect cyber threats. Time-series analysis can also be used for real-time threat detection in operational environments.
+    \item \textbf{Model Training}: Models will be trained using supervised learning on labeled data or unsupervised learning on unlabelled data to detect anomalies. Cross-validation techniques will be used to avoid overfitting.
+    \item \textbf{Threat Classification}: The trained model will be used to classify network activity or system behavior into predefined threat categories (e.g., malware, phishing, Denial of Service attacks).
 \end{itemize}
 
 \subsubsection{Risk Assessment and Threat Probability}
-The probability of a cyber threat occurring can be evaluated using Bayesian Probability or Conditional Probability models, which estimate threat likelihood given past occurrences or indicators.
+The probability of a cyber threat occurring will be evaluated using Bayesian Probability or Conditional Probability models. These tools estimate threat likelihood given past occurrences or indicators.
 
 \subsubsection{Bayesian Probability}
 \[
