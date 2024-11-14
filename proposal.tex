@@ -82,7 +82,7 @@
   MUHAMMAD UMER FAROOQ\\
   2925331\\[20pt]
   Supervisors:\\[10pt]
-  Dr. Helen Robertson\\[10pt]
+  Dr. Helen Robertson (M)\\[10pt]
   Dr. Ahsan Mahboob\\[10pt]
   \today
   }
@@ -435,15 +435,68 @@ The research will follow a comprehensive, multi-phase approach tailored to addre
 \subsection{Pre-Modelling Phase} 
 The pre-modelling phase focuses on the initial setup and preparation needed to build an effective Cyber Threat Intelligence (CTI) system. It includes data collection, data preprocessing, and defining the threat intelligence goals specific to the mining industry.
 
+\subsubsection{Data Collection}
+
+To build an effective CTI framework, a systematic approach to data collection is adopted, emphasizing diverse and comprehensive threat intelligence data relevant to mining. We will collect raw data from various sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports. In mining operations, sensor and operational data can also be leveraged to detect abnormal patterns in the network.
+
+\subsubsection{Type and Scope of Data Sources}
+
+Data will be collected from various sources to capture the full spectrum of potential cyber threats:
+
 \begin{itemize}
-    \item \textbf{Data Collection}: We will collect raw data from various sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports. In mining operations, sensor and operational data can also be leveraged to detect abnormal patterns in the network.
-    \item \textbf{Data Preprocessing}: We will clean and transform into a usable format. This will involve handling missing data, removing duplicates, and normalizing data formats. Feature extraction techniques such as Principal Component Analysis (PCA) can be applied to reduce noise.
+    \item \textbf{Network Logs:} Network traffic data, including firewall logs, intrusion detection system (IDS) logs, and packet captures, will be collected from operational networks. This data reveals patterns and potential anomalies in network behavior.
+    
+    \item \textbf{Endpoint Data:} Logs from endpoint devices (e.g., workstations, IoT sensors, mobile devices) will be collected to monitor user activity and detect endpoint-based threats. Endpoint detection and response (EDR) data will provide insights into suspicious activities, processes, and applications.
+    
+    \item \textbf{Open Source Intelligence (OSINT):} Threat intelligence feeds from OSINT platforms like AlienVault, MISP, and forums, along with social media and dark web sources, will help to track new vulnerabilities, known exploits, and other indicators of compromise (IOCs).
+    
+    \item \textbf{Historical Incident Data:} Past cyber incidents within the mining industry, including ransomware attacks and unauthorized access events, will be collected from industry reports and public repositories. This historical data will be used to train and validate the model.
+\end{itemize}
+
+\subsubsection{Data Collection Frequency}
+
+Data will be collected at varying frequencies to accommodate the real-time nature of threat detection and historical trend analysis:
+
+\begin{itemize}
+    \item \textbf{Real-time Collection:} Network and endpoint logs will be captured in real-time to support immediate threat detection and mitigation.
+    
+    \item \textbf{Daily Aggregation:} OSINT data will be aggregated daily to capture trends and emerging threats without overwhelming the system.
+    
+    \item \textbf{Quarterly Historical Analysis:} Historical incident data will be reviewed and updated quarterly to incorporate any recent threats relevant to mining operations.
+\end{itemize}
+
+\subsubsection{Data Preprocessing and Cleaning}
+
+Preprocessing ensures that the collected data is clean, consistent, and ready for analysis:
+
+\begin{itemize}
+    \item \textbf{Data Cleaning:} We will clean and transform data into a usable format. This will involve handling missing data, removing duplicates, and normalizing data formats. Duplicate entries and irrelevant data points will be removed. Null values will be addressed to improve data quality. 
+    
+    \item \textbf{Normalization:} Standardization of formats (e.g., timestamp consistency) and normalization of data across sources.
+    
+    \item \textbf{Feature Extraction:} Key features for cyber threat detection, such as IP addresses, activity timestamps, and user patterns, will be extracted. Principal Component Analysis (PCA) will reduce noise and dimensionality, improving computational efficiency.
+\end{itemize}
+
+% ===================================
+
+\begin{itemize}
     \item \textbf{Data Labeling}: For supervised learning, historical data will be labeled by domain experts as normal or malicious based on past incidents.
     \item \textbf{Goal Definition}: Specific objectives will be defined, such as detecting ransomware, Advanced Persistent Threats (APTs), or insider threats, which will influence the models and algorithms chosen in the next phase.
 \end{itemize}
 
 \subsection{Modelling Phase} 
 The modelling phase will involve building machine learning models that will predict and detect cyber threats based on the pre-processed data.
+\subsubsection{Model Evaluation Metrics}
+Key metrics are selected to evaluate the model’s performance in threat detection, with an emphasis on balancing detection accuracy and operational feasibility:
+\begin{itemize}
+    \item \textbf{Accuracy}: Overall accuracy is measured as the proportion of correctly classified instances. This metric provides a general measure of performance but can be misleading for imbalanced datasets.
+    \item \textbf{Precision}: Indicates the proportion of true positives among all positive predictions, reducing the frequency of false alarms and minimizing alert fatigue among analysts.
+    \item \textbf{Recall (Sensitivity)}: Measures the proportion of actual positives correctly identified, critical for minimizing missed threats and maximizing detection rates.
+    \item \textbf{F1-Score}: A harmonic mean of precision and recall, providing a balanced evaluation for situations with an uneven class distribution.
+    \item \textbf{Area Under the ROC Curve (AUC-ROC)}: AUC-ROC evaluates the model’s ability to distinguish between true positives and false positives across different thresholds. This is particularly useful for imbalanced datasets common in threat detection.
+
+\end{itemize}
+\subsubsection{Model Selection}
 
 \begin{itemize}
     \item \textbf{Model Selection}: Machine learning models such as decision trees, random forests, support vector machines (SVMs), or neural networks will be selected based on the data type and threat scenarios.
@@ -552,17 +605,30 @@ After building the models, the post-modelling phase focuses on evaluation, valid
     \item \textbf{Deployment Readiness}: Once validated, the model is integrated into existing systems (e.g., Security Information and Event Management systems) for real-time threat detection. The model undergoes stress testing to ensure it can handle real-time data streams.
 \end{itemize}
 
-\subsection{Experimental Setup}
-The experimental setup defines how the CTI models are tested in a controlled environment before full deployment.
+\subsubsection{Test Environment Configuration}
+The experimental setup defines how the CTI models are tested in a controlled environment before full deployment. The CTI framework will be tested in a controlled environment replicating typical mining network configurations. The test environment includes:
 
 \begin{itemize}
     \item \textbf{Test Environment Setup}: A simulated or controlled mining network is created, including virtual machines, network traffic simulators, and log generators to mimic realistic scenarios.
+    \item \textbf{Simulated Network Traffic}: Simulated mining network traffic, including both typical operational data and attack patterns (e.g., DDoS, malware, and insider threats), will be generated to assess the system’s response.
+
     \item \textbf{Data Injection}: Historical data and simulated attack data are injected into the system to evaluate its ability to detect and respond to various threats.
-    \item \textbf{Performance Measurement}: The system’s performance is measured using metrics such as detection rate, false alarm rate, and response time. Resource usage (CPU, memory) is also monitored to ensure scalability.
+    \item \textbf{Performance Measurement}: The system’s performance is measured using metrics such as detection rate, false alarm rate, response time, resource usage (CPU, memory), and scalability under different load conditions. Resource usage (CPU, memory) is also monitored to ensure scalability.
     \item \textbf{Comparison with Existing Systems}: The CTI framework’s performance is compared to existing cybersecurity systems in the mining industry to assess improvements.
 \end{itemize}
+\subsubsection{Benchmarking and System Performance Metrics}
 
-\subsection{Optimization and Training Models}
+\begin{itemize}
+    \item \textbf{Detection Rate}: Measures the framework’s ability to identify known and unknown threats accurately.
+    
+    \item \textbf{False Positive Rate (FPR)}: Low FPR is essential to maintain operational efficiency by avoiding excessive false alarms.
+    
+    \item \textbf{Response Time}: Measures the time taken to detect and classify potential threats, crucial for real-time threat mitigation.
+    
+    \item \textbf{Resource Utilization}: CPU and memory usage are monitored during peak times to assess scalability and efficiency.
+\end{itemize}
+
+\subsubsection{Optimization and Training Models}
 The optimization and training phase focuses on refining the models to maximize their performance and efficiency.
 
 \begin{itemize}
@@ -571,6 +637,16 @@ The optimization and training phase focuses on refining the models to maximize t
     \item \textbf{Efficiency Optimization}: The model is optimized for real-time performance through techniques such as model pruning, quantization, or the use of lightweight architectures.
     \item \textbf{Final Model Training}: The final optimized model is trained on the entire dataset to ensure robustness and accuracy. It is then ready for deployment into the CTI system.
 \end{itemize}
+
+\subsubsection{Documentation and Reporting}
+To support effective usage and future updates, comprehensive documentation is maintained throughout the research:
+
+\begin{itemize}
+    \item \textbf{Technical Documentation}: Detailed documentation of model architectures, data sources, and preprocessing steps ensures maintainability and scalability.
+    \item \textbf{Evaluation Reports}: Performance metrics, validation results, and system performance summaries provide insights into model reliability and areas for improvement.
+    \item \textbf{User Guidelines}: A manual for cybersecurity teams covers system monitoring, alert management, and updating procedures, ensuring practical use of the CTI framework.
+\end{itemize}
+
 
 \section{Limitations}
 
