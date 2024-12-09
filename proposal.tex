@@ -71,12 +71,9 @@
 \begin{center}
   \vfill
   {
-  \huge \bf \textsc{The Development of Cyber Threat Intelligence System Framework for the Mining Industry}\\
+  \huge \bf \textsc{Development of a Prototype Cyber Threat Intelligence (CTI) Framework for the Mining Industry}\\
   \rule{\linewidth}{0.5pt}
-
 %   \large Subtitle\\[20pt]
-
-
   \normalsize
   Proposed by:\\
   MUHAMMAD UMER FAROOQ\\
@@ -110,8 +107,9 @@ in partial fulfilment of the requirements for the degree of Master of Science (D
 
 \phantomsection
 \begin{abstract}
-    The mining industry’s increasing reliance on digital technologies has significantly increased its vulnerability to cyber threats that could have serious operational, financial, and environmental consequences. The aim of this research is to develop cyber threat intelligence (CTI) Framework specifically for the mining industry. CTI Framework for mining industry will use advanced data analytics and machine learning to enhance cyber threat detection and mitigation capabilities. A mixed-methods approach combining systematic literature reviews, empirical testing, and qualitative analyses ensures a robust framework that addresses both technical and ethical considerations. The proposed CTI system will gather, aggregate, and analyze data from diverse sources, such as network logs and open-source intelligence feeds, employing machine learning techniques to identify patterns and anomalies indicative of cyber threats. This research also critically examines the ethical implications of deploying such systems, ensuring compliance with industry standards and regulations. By integrating stakeholder feedback throughout the development and implementation phases, the study ensures that the CTI system is practical, effective, and aligned with the mining industry’s specific needs. The anticipated outcomes include improved resilience against cyber threats, minimized risk of operational disruptions, and enhanced protection of sensitive data and infrastructure. This research contributes to the broader field of cybersecurity in critical infrastructure, providing valuable insights into the application of CTI systems within industry-specific contexts.
+    The increasing integration of digital technologies in the mining industry has heightened its vulnerability to cyber threats, which pose significant risks to operations, financial stability, and environmental safety. This research aims to develop a Prototype Cyber Threat Intelligence (CTI) framework specifically tailored for the mining sector, leveraging advanced data analytics and machine learning to improve cyber threat detection and mitigation. The objectives include designing a CTI system that can collect and analyze data from diverse sources such as network logs and open-source intelligence feeds, identifying patterns and anomalies indicative of cyber threats. A mixed-methods approach will be employed, combining a systematic literature review, empirical testing, and stakeholder consultations to ensure the framework is both technically robust and ethically sound. The methodology integrates machine learning models for threat classification and anomaly detection while considering privacy and regulatory concerns. The expected outcomes include enhanced resilience to cyber threats, reduced operational disruptions, and improved protection of critical infrastructure. This research will contribute to the broader field of cybersecurity in critical infrastructure, offering practical insights into the application of CTI systems within the mining industry.
 \end{abstract}
+
 
 \phantomsection
 \begin{declaration}
@@ -145,7 +143,7 @@ Their unwavering support, constructive feedback, and encouragement have been cru
 \pagenumbering{arabic}
 % Chapter 1
 \chapter{Introduction}
-The Mining Industry plays an important role for the global economy. It depends on digital technologies to improve operations, safety, and sustainability. The reliance on technology exposes the industry to significant cyber threats that may disrupt operations, compromise safety, and cause financial loss and environmental harm. Due to these risks, the need for effective cyber threat detection in mining has become more urgent than ever. Traditional and reactive cybersecurity measures often fail to address the complex and evolving threats specific to the mining sector. This has led to the growing importance of Cyber Threat Intelligence (CTI) System for the mining sector, which proactively detect, analyze, and respond to potential threats using intelligence feeds. These systems collect and analyze data from multiple sources, helping organizations identify and mitigate risks before they cause damage. Despite these potential threats, the effective and intelligent cyber threat detection system in mining has never been implemented. Traditional reactive cybersecurity measures used in the sector often fall short of addressing the sophisticated and evolving threats unique to the mining sector. This research aims to fill these gaps by developping tailored Cyber Threat Intelligence System Framework specifically for the mining industry. The CTI Framework will use advanced data analytics and machine learning algorithms to detect patterns and anomalies in threats data and it will improve the industry’s ability to defend against cyber-attacks. Additionally, this study will examine the ethical implications of implementing such a system, ensuring it meets both technical and ethical standards. By designing a CTI system tailored to the mining sector, this research will address a critical need and contribute to the broader field of cybersecurity. In Figure: \ref{fig:thing11}, World Economic Forum Global Risks Perception Survey 2023-2024 indicating a wide subset of the global population to potential digital and physical exploitation.
+The Mining Industry plays an important role for the global economy. It depends on digital technologies to improve operations, safety, and sustainability. The reliance on technology exposes the industry to significant cyber threats that may disrupt operations, compromise safety, and cause financial loss and environmental harm \citet{lenka2023cybersecurity}. Due to these risks, the need for effective cyber threat detection in mining has become more urgent than ever. Traditional and reactive cybersecurity measures often fail to address the complex and evolving threats \citet{liu2022tricti} specific to the mining sector. This has led to the growing importance of Cyber Threat Intelligence (CTI) System for the mining sector, which proactively detect, analyze, and respond to potential threats using intelligence feeds \citet{webb2014information}. These systems collect and analyze data from multiple sources, helping organizations identify and mitigate risks before they cause damage. Despite these potential threats, the effective and intelligent cyber threat detection system in mining has never been implemented. Traditional reactive cybersecurity measures used in the sector often fall short of addressing the sophisticated and evolving threats unique to the mining sector. This research aims to fill these gaps by developping tailored Cyber Threat Intelligence System Framework specifically for the mining industry. The CTI Framework will use advanced data analytics and machine learning algorithms to detect patterns and anomalies in threats data and it will improve the industry’s ability to defend against cyber-attacks. Additionally, this study will examine the ethical implications of implementing such a system, ensuring it meets both technical and ethical standards. By designing a CTI system tailored to the mining sector, this research will address a critical need and contribute to the broader field of cybersecurity. In Figure: \ref{fig:thing11}, World Economic Forum Global Risks Perception Survey 2023-2024 indicating a wide subset of the global population to potential digital and physical exploitation.
 
 \begin{figure}[ht]
     \centering
@@ -155,9 +153,16 @@ The Mining Industry plays an important role for the global economy. It depends o
 \end{figure}
 
 \section{Problem Statement}
-Mining Industry plays an important role in global economic development. Mining Industries are adopting digital technologies rapidly to enhance productivity, safety, and efficiency. These are becoming more vulnerable to cyber threats. These threats can disrupt operations, can compromise sensitive data, can cause financial loss, and even it can endanger lives and the environment. Evolution Mining is an Australian gold mining company. It suffered a ransomware attack in August 2024 on its IT systems, which, though swiftly contained, underscored the industry's susceptibility to cyber threats. In July 2024, Sibanye-Stillwater also faced a cyberattack, leading to temporary IT system outages and manual processing in some of its operations. Norsk Hydro is a major metals and mining company. It experienced a ransomware attack in 2020 that caused significant operational shutdowns and millions in losses.
-An attack on a South American in 2017 on a mining firm compromised sensitive geological data. An Australian mining company suffered unauthorized access in 2019 which disrupted automated processes and risked worker safety. Table \ref{table:incidents_history} shows some Cyber Attack incidents on Mining Indusries.
-These incidents highlight the urgent necessity for robust, proactive cybersecurity measures to protect the industry from evolving threats.
+
+The mining industry plays a critical role in global economic development, contributing essential raw materials for various industries. As mining companies increasingly adopt digital technologies to enhance productivity, safety, and operational efficiency, they inadvertently expose themselves to significant cybersecurity risks. The growing integration of digital systems such as Supervisory Control and Data Acquisition (SCADA) systems, automation, and remote monitoring technologies introduces new vulnerabilities that can be exploited by cybercriminals. These vulnerabilities are further compounded by the use of legacy systems that are often not designed with modern cybersecurity threats in mind. 
+
+Mining operations are particularly susceptible to attacks on SCADA systems, which control and monitor critical infrastructure such as equipment, energy consumption, and safety systems. SCADA systems are often integrated into remote environments where connectivity can be limited or unstable, making them attractive targets for cyberattacks. Cybercriminals can exploit vulnerabilities in these systems to gain unauthorized access, disrupt operations, or cause physical damage to mining equipment, posing significant risks to both personnel safety and environmental protection.
+
+Legacy systems used in older mining operations also present substantial cybersecurity challenges. These systems are often outdated, with security patches and updates not being applied regularly, leaving them exposed to known vulnerabilities. Furthermore, many mining companies rely on these legacy systems for critical processes, making it difficult to implement modern cybersecurity protocols without significant operational disruptions.
+
+Several high-profile cyberattacks in the mining industry highlight the urgency of addressing these vulnerabilities. Evolution Mining \citet{evolution2024}, an Australian gold mining company, suffered a ransomware attack in August 2024 that compromised its IT systems. While the attack was quickly contained, it exposed the company's susceptibility to cyber threats. In July 2024, Sibanye-Stillwater \citet{cameron2024sibanye} also faced a cyberattack that led to temporary IT system outages and manual processing in some of its operations. Norsk Hydro, a major metals and mining company, experienced a ransomware attack in 2020 that resulted in significant operational shutdowns and millions of dollars in losses \citet{ravichandran2024comprehensive}. Additionally, a cyberattack on a South American mining firm in 2017 led to the compromise of sensitive geological data, while an Australian mining company suffered unauthorized access in 2019 that disrupted automated processes and endangered worker safety.
+
+These incidents underscore the growing threat landscape facing the mining industry and highlight the need for robust, proactive cybersecurity measures that can address vulnerabilities in critical systems such as SCADA, legacy infrastructure, and remote environments. Cyber threats not only pose the risk of financial loss and operational disruptions but can also jeopardize worker safety, compromise sensitive data, and lead to environmental harm. Therefore, there is an urgent need for advanced cybersecurity frameworks tailored to the specific challenges of the mining sector.
 
 
 \begin{longtable}{|p{2.5cm}|p{1.7cm}|p{1.5cm}|p{2.5cm}|p{5.5cm}|}
@@ -165,14 +170,14 @@ These incidents highlight the urgent necessity for robust, proactive cybersecuri
     \hline
     \textbf{Company} & \textbf{Country} & \textbf{Date} & \textbf{Type of Attack} & \textbf{Impact} \\
     \hline
-    Evolution Mining & Australia & August 2024 & Ransomware & IT systems compromised, though quickly contained; incident highlighted vulnerability to cyber threats. \\
+    Evolution Mining \citet{evolution2024} & Australia & August 2024 & Ransomware & IT systems compromised, though quickly contained; incident highlighted vulnerability to cyber threats. \\
     \hline
-    Sibanye-Stillwater & South Africa & July 2024 & Cyberattack (Type Undisclosed) & Temporary IT system outages; forced manual processing in operations, causing delays and increased operational costs. \\
+    Sibanye-Stillwater \citet{cameron2024sibanye} & South Africa & July 2024 & Cyberattack (Type Undisclosed) & Temporary IT system outages; forced manual processing in operations, causing delays and increased operational costs. \\
     \hline
-    Norsk Hydro & Norway & March 2019 & Ransomware & Major operational shutdowns across global operations; cost company over \$70 million to recover; IT and production disruptions led to delays and losses. \\
+    Norsk Hydro \citet{ravichandran2024comprehensive} & Norway & March 2019 & Ransomware & Major operational shutdowns across global operations; cost company over \$70 million to recover; IT and production disruptions led to delays and losses. \\
     \hline
-    Unnamed Mining Firm & South America & 2017 & Data Breach & Compromised sensitive geological data, potentially affecting competitive advantage and project valuations. \\
-    \hline
+    % Unnamed Mining Firm & South America & 2017 & Data Breach & Compromised sensitive geological data, potentially affecting competitive advantage and project valuations. \\
+    % \hline
     Australian Mining Company & Australia & 2019 & Unauthorized Access & Unauthorized access to automated systems disrupted production; raised safety risks for workers and operational delays. \\
     \hline
     Vedanta Resources & India & April 2023 & Ransomware & Systems at one of its smelters breached, causing partial shutdowns and impacting the supply chain; ransom demanded in cryptocurrency. \\
@@ -187,6 +192,9 @@ These incidents highlight the urgent necessity for robust, proactive cybersecuri
     \hline
 \end{longtable}
 
+\section{Importance of CTI for the Mining Industry}
+The mining industry's increasing reliance on digital technologies to enhance operational efficiency, safety, and sustainability has made it a prime target for cyber threats. Cyber Threat Intelligence (CTI) is critical in addressing these threats by providing actionable insights into potential vulnerabilities and attack vectors. Unlike traditional reactive cybersecurity measures, CTI offers a proactive approach, allowing mining companies to identify, analyze, and mitigate threats before they materialize.
+CTI frameworks tailored to the mining industry can bridge the gap between general cybersecurity solutions and the specific needs of mining operations. These needs often stem from unique challenges such as remote operational environments, the integration of legacy systems, and dependence on third-party vendors. By providing real-time intelligence on emerging threats, CTI empowers mining companies to safeguard critical infrastructure, protect sensitive data, and ensure the continuity of operations in the face of evolving cyber risks.
 
 % \includegraphics[width=1.0\linewidth]{images/world-economic-forum-global-risks.png}  % If located in the "images" folder
 % \caption{World Economic Forum Global Risks Perception Survey 2023-2024}
@@ -254,8 +262,63 @@ By developing a CTI framework specific to the mining industry, this research int
 \section{Introduction}
 This chapter discusses the background and prior research related to Cyber Threat Intelligence (CTI) systems in detail. This section provides the foundational understanding of CTI frameworks and situates the current research within the context of existing literature. The review covers the evolution of cybersecurity challenges in the mining industry, key components of CTI frameworks, and the use of data analytics and machine learning techniques to identify cyber threats. The chapter also discusses the ethical considerations and regulatory requirements relevant to developing a CTI system in a highly specialized industrial environment.
 
+\subsection{Cyber Threat Intelligence (CTI)}
+
+Cyber Threat Intelligence (CTI) refers to the collection, analysis, and dissemination of information related to current and potential cyber threats targeting an organization, system, or infrastructure \citet{kotsias2023adopting}. It involves gathering data from various sources such as open-source intelligence (OSINT), network logs, threat feeds, and internal security events. This data is then analyzed to identify patterns, trends, and specific tactics, techniques, and procedures (TTPs) used by cyber adversaries. The ultimate goal of CTI is to provide actionable insights that allow organizations to proactively defend against threats, identify vulnerabilities, and anticipate future attacks, thereby enhancing overall cybersecurity posture \citet{webb2014information}.
+
+CTI is typically categorized into three types based on the level of detail and use:
+
+\begin{itemize}
+    \item \textbf{Tactical CTI:} Focuses on immediate, actionable threat data, such as specific malware signatures, IP addresses, or domain names used by cybercriminals. It provides information that can be directly implemented into security systems (e.g., firewalls or antivirus software).
+    
+    \item \textbf{Operational CTI:} Provides insights into attack campaigns, including the strategies and methods used by attackers, and is useful for identifying trends or clusters of attacks across an organization or sector.
+    
+    \item \textbf{Strategic CTI:} Focuses on high-level intelligence regarding the cyber threat landscape, helping organizations understand the motivations, capabilities, and intent of threat actors. It is more relevant for senior leadership to make informed decisions about long-term security and risk management.
+\end{itemize}
+
+\subsection{Distinction from Related Cybersecurity Tools}
+
+While Cyber Threat Intelligence (CTI) focuses on proactive threat identification and mitigation through data-driven insights, other cybersecurity tools like antivirus software typically focus on reactive measures, protecting systems from known threats.
+
+Here’s how CTI differs from tools like antivirus software:
+
+\subsubsection{Focus and Purpose:}
+\begin{itemize}
+    \item \textbf{CTI:} Aims to proactively identify and mitigate threats before they affect the system. It provides a broader strategic view of threats, identifying emerging risks and long-term trends.
+    
+    \item \textbf{Antivirus:} Primarily focused on detecting and removing known malware or malicious files based on predefined signatures. It reacts to threats once they’ve entered the system, offering defense through signature-based detection.
+\end{itemize}
+
+\subsubsection{Scope:}
+\begin{itemize}
+    \item \textbf{CTI:} Covers a wide range of cyber threats, including malware, ransomware, phishing attacks, Advanced Persistent Threats (APTs), and insider threats. CTI gathers information on threat actors’ tactics, techniques, and procedures (TTPs) to predict and prevent attacks.
+    
+    \item \textbf{Antivirus:} Primarily targets known types of malware. Antivirus software typically focuses on file-based threats, often using signature databases to identify malicious code.
+\end{itemize}
+
+\subsubsection{Data Sources:}
+\begin{itemize}
+    \item \textbf{CTI:} Involves gathering data from various sources, such as open-source intelligence (OSINT), threat feeds, network logs, and industry-specific reports. It often integrates machine learning and data analytics to recognize patterns and anomalies in threat data.
+    
+    \item \textbf{Antivirus:} Uses a signature-based approach that compares files and behaviors against a database of known malware signatures. Antivirus tools may also use heuristic analysis to detect unknown threats based on behavior, but the scope of analysis is generally more limited.
+\end{itemize}
+
+\subsubsection{Proactivity vs. Reactivity:}
+\begin{itemize}
+    \item \textbf{CTI:} Is inherently proactive, aiming to anticipate and prepare for threats before they occur. It provides security teams with actionable intelligence that helps them adjust defenses and response strategies.
+    
+    \item \textbf{Antivirus:} Is reactive, meaning it relies on detecting threats after they have been introduced to the system. It typically requires regular updates to its signature database to remain effective against new threats.
+\end{itemize}
+
+\subsubsection{Integration:}
+\begin{itemize}
+    \item \textbf{CTI:} Integrates with various security systems (firewalls, intrusion detection/prevention systems, SIEM tools, etc.) to improve overall security strategy. It can provide security teams with insights to update or fine-tune defenses based on emerging threats.
+    
+    \item \textbf{Antivirus:} Operates as an individual tool, designed to be installed on endpoints and monitor for specific, known threats, often without direct integration into the broader security ecosystem of an organization.
+\end{itemize}
+
 \section{Background}
-The mining industry's integration into the digital ecosystem has resulted in increased automation, improved safety measures, and enhanced operational efficiency. However, this dependence on digital technology has simultaneously made mining operations susceptible to sophisticated cyber threats. These threats are often complex, ranging from ransomware attacks that can halt operations to Advanced Persistent Threats (APTs) aimed at stealing valuable intellectual property.
+The mining industry's integration into the digital ecosystem has resulted in increased automation, improved safety measures, and enhanced operational efficiency. However, this dependence on digital technology has simultaneously made mining operations susceptible to sophisticated cyber threats. These threats are often complex, ranging from ransomware attacks that can halt operations to Advanced Persistent Threats (APTs) aimed at stealing valuable intellectual property \citet{gately2023russian}.
 
 \subsection{Industry 4.0 and Digitalization}
 The concept of Industry 4.0 has brought a digital transformation across sectors, including mining, through the use of IoT, machine learning, cloud computing, and big data. In mining, technologies like real-time monitoring systems, autonomous mining equipment, and predictive maintenance are becoming the norm. However, this transformation exposes critical infrastructure to cyber vulnerabilities \citep{wang2013cyber, sajid2016cloud}.
@@ -403,6 +466,26 @@ Review studies that have successfully implemented machine learning in critical i
     \item \textbf{Global Cybersecurity Alliances:} Participation in global threat intelligence networks to stay updated on emerging cross-border cyber threats.
 \end{itemize}
 
+\subsection{Limitations of CTI Frameworks in Mining-Specific Contexts}
+
+While Cyber Threat Intelligence (CTI) frameworks offer significant advantages in improving the cybersecurity posture of various industries, there are specific challenges and limitations when applying these frameworks to the mining sector. These limitations arise due to the unique characteristics and operational needs of mining operations, including their complex, remote environments and reliance on legacy systems. 
+
+\begin{itemize}
+    \item \textbf{Complex and Heterogeneous IT/OT Environments:} Mining operations often involve a mix of Information Technology (IT) and Operational Technology (OT) systems, which have distinct requirements and vulnerabilities. CTI frameworks that are primarily designed for IT environments may struggle to address the complexities of OT systems, such as Supervisory Control and Data Acquisition (SCADA) systems, which are commonly used in mining operations. The integration of CTI into these diverse environments may be challenging and may require custom solutions to bridge the gap between IT and OT security \citep{wang2013cyber}.
+    
+    \item \textbf{Limited Connectivity in Remote Locations:} Many mining operations are located in remote and harsh environments where internet connectivity is either limited or unreliable. This makes the deployment of CTI systems challenging, as many CTI tools rely on real-time data feeds and cloud-based analytics. In remote locations, mining companies may face difficulties in implementing robust CTI systems that require continuous data collection and analysis.
+    
+    \item \textbf{Lack of Real-Time Threat Data:} CTI systems often depend on timely and accurate threat intelligence data, such as threat feeds, open-source intelligence (OSINT), and logs. However, in the mining industry, due to its global supply chain and fragmented data sources, obtaining real-time threat data may be difficult. Furthermore, many mining companies are not part of established Information Sharing and Analysis Centers (ISACs), which would otherwise provide a channel for sharing threat intelligence across industries.
+    
+    \item \textbf{Inadequate Threat Attribution:} One of the critical aspects of CTI is accurately attributing cyberattacks to specific threat actors. In the context of mining, particularly when dealing with attacks on critical infrastructure, it can be challenging to attribute threats reliably due to the involvement of multiple adversaries, including state-sponsored actors, cybercriminal groups, and insiders. Additionally, mining companies may lack the sophisticated tools or expertise to conduct in-depth threat attribution analysis.
+    
+    \item \textbf{Difficulty in Applying Machine Learning Models:} While machine learning (ML) and data analytics are commonly used in CTI frameworks to identify patterns and predict future threats, the application of these technologies in the mining industry may face hurdles. Mining companies may not have the required data infrastructure or historical data to train accurate machine learning models. Additionally, mining-specific threat scenarios, such as attacks on equipment or geospatial data, may require specialized models that do not fit within the conventional CTI frameworks.
+    
+    \item \textbf{Lack of Skilled Personnel:} The mining industry, especially in remote regions, may face a shortage of cybersecurity professionals with expertise in CTI and the specific challenges of protecting industrial control systems. Mining companies may struggle to build the internal capacity to manage and integrate CTI effectively into their cybersecurity strategies, leading to gaps in threat detection, analysis, and response.
+    
+    \item \textbf{Cost and Resource Constraints:} Implementing a robust CTI system, especially one that incorporates machine learning, advanced analytics, and real-time threat intelligence feeds, can be costly. Mining companies, particularly small- to medium-sized operations, may lack the financial resources to invest in comprehensive CTI solutions. This can lead to underinvestment in critical cybersecurity infrastructure, leaving systems vulnerable to cyberattacks.
+\end{itemize}
+
 \subsection*{Future Trends and Emerging Threats}
 \begin{itemize}
     \item \textbf{Zero Trust Architecture \citet{stafford2020zero}:} Exploring the adoption of zero trust principles in securing industrial networks.
@@ -434,7 +517,17 @@ The research will follow a comprehensive, multi-phase approach tailored to addre
 The pre-modelling phase focuses on the initial setup and preparation needed to build an effective Cyber Threat Intelligence (CTI) system. It includes data collection, data preprocessing, and defining the threat intelligence goals specific to the mining industry.
 
 \subsubsection{Data Collection}
+To build an effective CTI framework, a systematic approach to data collection is adopted, emphasizing diverse and comprehensive threat intelligence data relevant to mining. In addition to raw data from various real-time sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports, we will integrate \textbf{synthetic and public datasets} to simulate potential cyber threats and validate the system's performance.
 
+\textbf{Synthetic and Public Datasets:} 
+
+Given the challenges of accessing proprietary or industry-specific data, synthetic and public datasets will be heavily utilized in this research. These datasets provide valuable, publicly available data on network traffic, malware behaviors, and common attack strategies, which are critical for training and evaluating machine learning models. Here are some datastets listed below:
+\begin{itemize}
+    \item \textbf{CICIDS 2017 and 2018:} Canadian Institute for Cybersecurity's Intrusion Detection System datasets, which include traffic data and attack scenarios across various networks, such as botnet attacks, DoS (Denial of Service), and exploitation of vulnerabilities.
+    \item \textbf{UNSW-NB15:} A widely used dataset for network traffic and cybersecurity research that includes a broad spectrum of cyberattacks like DoS, web attacks, and exploits.
+    \item \textbf{DARPA 1999:} A classic dataset for evaluating intrusion detection systems, which includes labeled attack types such as rootkits and DoS.
+    \item \textbf{KDDCup 1999:} Contains simulated network traffic data with a variety of attack types, which is useful for training anomaly detection algorithms.
+\end{itemize}
 To build an effective CTI framework, a systematic approach to data collection is adopted, emphasizing diverse and comprehensive threat intelligence data relevant to mining. We will collect raw data from various sources such as network logs, open-source intelligence (OSINT) feeds, and vendor-specific threat intelligence reports. In mining operations, sensor and operational data can also be leveraged to detect abnormal patterns in the network.
 
 \subsubsection{Type and Scope of Data Sources}
@@ -659,13 +752,13 @@ Moreover, transparency and accountability in the use of machine learning algorit
 % % End of Chapter 3
 \chapter{Schedule of Work}
 
-This chapter outlines the schedule of work for the development of a Cyber Threat Intelligence (CTI) framework tailored to the mining industry. The research is planned over a 12-month period, starting from December 1, 2024, to November 30, 2025. Each phase consists of specific tasks aimed at meeting the objectives of this research.
+This chapter outlines the schedule of work for the development of a Cyber Threat Intelligence (CTI) framework tailored to the mining industry. The research is planned over a 10-month period, starting from February 1, 2025, to November 30, 2025. Each phase consists of specific tasks aimed at meeting the objectives of this research.
 
 \section{Overview}
 
 The research schedule is divided into six phases: Initial Planning and Literature Review, Pre-Modelling and Data Preparation, Modelling and Machine Learning, System Evaluation and Optimization, Continuous Learning and Model Refinement, and Documentation and Final Reporting. Each phase addresses key tasks needed to develop, test, and validate a CTI framework designed for the unique cybersecurity needs of the mining industry.
 
-\subsection{Phase 1: Requirements Analysis and Literature Review}
+\subsection{Phase 1: Requirements Analysis and Literature Review}  
 The initial phase involves a comprehensive literature review and requirements analysis to understand the existing cybersecurity landscape within the mining industry. Key activities include:
 \begin{itemize}
     \item \textbf{Stakeholder Engagement:} Conduct interviews and surveys with stakeholders, including cybersecurity professionals, to identify specific threats and security gaps in the mining sector.
@@ -673,7 +766,7 @@ The initial phase involves a comprehensive literature review and requirements an
     \item \textbf{Gap Analysis:} Identify limitations in current CTI solutions and the specific needs of mining operations that require a tailored approach.
 \end{itemize}
 
-\subsection{Phase 2: Data Collection and Preprocessing}
+\subsection{Phase 2: Data Collection and Preprocessing}  
 This phase focuses on gathering and preparing data necessary for developing and testing the CTI framework. Key activities include:
 \begin{itemize}
     \item \textbf{Data Sources:} Collect data from multiple sources, including network logs, OSINT (Open Source Intelligence) feeds, vendor-provided threat reports, and historical attack data in the mining industry.
@@ -681,7 +774,7 @@ This phase focuses on gathering and preparing data necessary for developing and 
     \item \textbf{Data Labeling:} Label data samples with assistance from cybersecurity experts to distinguish between benign and malicious activities, enhancing model training accuracy.
 \end{itemize}
 
-\subsection{Phase 3: Framework Development and Modelling}
+\subsection{Phase 3: Framework Development and Modelling}  
 In this phase, the CTI framework’s architecture is designed and machine learning models are developed to detect, classify, and predict cyber threats in the mining sector. Key activities include:
 \begin{itemize}
     \item \textbf{Framework Architecture Design:} Create an architecture blueprint that integrates data collection, preprocessing, analysis, and decision-support components of the CTI system.
@@ -690,7 +783,7 @@ In this phase, the CTI framework’s architecture is designed and machine learni
     \item \textbf{Feature Engineering:} Conduct feature engineering and exploratory data analysis to identify the most relevant indicators of cyber threats.
 \end{itemize}
 
-\subsection{Phase 4: System Evaluation and Optimization}
+\subsection{Phase 4: System Evaluation and Optimization}  
 Once the CTI framework is developed, it undergoes rigorous testing and evaluation to ensure performance and reliability. Key activities include:
 \begin{itemize}
     \item \textbf{Model Validation:} Validate the model’s performance on test datasets, evaluating metrics such as accuracy, precision, recall, and F1-score.
@@ -699,7 +792,7 @@ Once the CTI framework is developed, it undergoes rigorous testing and evaluatio
     \item \textbf{Scalability Assessment:} Assess the framework’s scalability to ensure it can handle large volumes of data generated in mining operations.
 \end{itemize}
 
-\subsection{Phase 5: Ethical Considerations and Compliance}
+\subsection{Phase 5: Ethical Considerations and Compliance}  
 This phase involves addressing the ethical and regulatory aspects of deploying a CTI system in the mining sector, focusing on data privacy and operational transparency. Key activities include:
 \begin{itemize}
     \item \textbf{Privacy Safeguards:} Implement data anonymization and encryption techniques to protect sensitive information and ensure compliance with data protection regulations.
@@ -707,7 +800,7 @@ This phase involves addressing the ethical and regulatory aspects of deploying a
     \item \textbf{Ethics Approval:} Seek ethical approval from relevant bodies and consult industry experts to ensure that the framework aligns with both legal standards and industry guidelines.
 \end{itemize}
 
-\subsection{Phase 6: Documentation and Final Reporting}
+\subsection{Phase 6: Documentation and Final Reporting}  
 The final phase documents the research findings and provides guidelines for practical implementation of the CTI framework in the mining industry. Key activities include:
 \begin{itemize}
     \item \textbf{Results Documentation:} Summarize findings, including insights into CTI framework performance, challenges, and opportunities for improvement.
@@ -716,7 +809,7 @@ The final phase documents the research findings and provides guidelines for prac
 \end{itemize}
 
 \begin{longtable}{|p{4cm}|p{9.5cm}|p{2.5cm}|}
-    \caption{Research Schedule from December 2024 to November 2025} \label{table:schedule_of_work} \\
+    \caption{Research Schedule from February 2025 to November 2025} \label{table:schedule_of_work} \\  
     \hline
     \textbf{Phase} & \textbf{Activity Description} & \textbf{Timeline} \\
     \hline\hline
@@ -733,39 +826,39 @@ The final phase documents the research findings and provides guidelines for prac
     \hline
     \endlastfoot
 
-    \textbf{Phase 1: Initial Planning and Literature Review} & & December 2024 - February 2025 \\
+    \textbf{Phase 1: Initial Planning and Literature Review} & & February - March 2025 \\
     \hline
-    Requirements Analysis and Stakeholder Engagement & Conduct initial meetings with stakeholders to identify specific cybersecurity needs and define the project scope. & Dec 2024 - Jan 2025 \\
+    Requirements Analysis and Stakeholder Engagement & Conduct initial meetings with stakeholders to identify specific cybersecurity needs and define the project scope. & Feb - Mar 2025 \\
     \hline
-    Literature Review & Review relevant literature on CTI frameworks, machine learning models, and cybersecurity within the mining sector to build a theoretical foundation. & Jan - Feb 2025 \\
+    Literature Review & Review relevant literature on CTI frameworks, machine learning models, and cybersecurity within the mining sector to build a theoretical foundation. & Mar 2025 \\
     \hline
-    Ethical and Regulatory Review & Review data privacy regulations and ethical standards for cybersecurity in mining to ensure compliance. & Feb 2025 \\
+    Ethical and Regulatory Review & Review data privacy regulations and ethical standards for cybersecurity in mining to ensure compliance. & Mar 2025 \\
     \hline
-    \textbf{Phase 2: Pre-Modelling and Data Preparation} & & March - April 2025 \\
+    \textbf{Phase 2: Pre-Modelling and Data Preparation} & & April - May 2025 \\
     \hline
-    Data Collection & Gather data from multiple sources, including network logs, OSINT feeds, and vendor-specific threat intelligence reports. & Mar 2025 \\
+    Data Collection & Gather data from multiple sources, including network logs, OSINT feeds, and vendor-specific threat intelligence reports. & Apr 2025 \\
     \hline
-    Data Preprocessing & Clean, transform, and normalize collected data, applying techniques such as PCA for noise reduction. & Mar - Apr 2025 \\
+    Data Preprocessing & Clean, transform, and normalize collected data, applying techniques such as PCA for noise reduction. & Apr - May 2025 \\
     \hline
-    Goal Definition and Data Labeling & Define objectives for CTI (e.g., ransomware detection) and label historical data as normal or malicious based on prior incidents. & Apr 2025 \\
+    Goal Definition and Data Labeling & Define objectives for CTI (e.g., ransomware detection) and label historical data as normal or malicious based on prior incidents. & May 2025 \\
     \hline
-    \textbf{Phase 3: Modelling and Machine Learning} & & May - July 2025 \\
+    \textbf{Phase 3: Modelling and Machine Learning} & & June - August 2025 \\
     \hline
-    Model Selection and Initial Testing & Choose initial machine learning models and test them on sample data to assess suitability for mining-specific cybersecurity needs. & May 2025 \\
+    Model Selection and Initial Testing & Choose initial machine learning models and test them on sample data to assess suitability for mining-specific cybersecurity needs. & Jun 2025 \\
     \hline
-    Feature Engineering & Optimize feature sets for threat detection based on exploratory data analysis. & May - Jun 2025 \\
+    Feature Engineering & Optimize feature sets for threat detection based on exploratory data analysis. & Jun - Jul 2025 \\
     \hline
-    Model Training and Evaluation & Train models using supervised and unsupervised learning techniques, evaluating performance with metrics such as accuracy, precision, and recall. & Jun - Jul 2025 \\
+    Model Training and Evaluation & Train models using supervised and unsupervised learning techniques, evaluating performance with metrics such as accuracy, precision, and recall. & Jul - Aug 2025 \\
     \hline
-    Threat Classification & Classify network activity and system behavior into threat categories, such as malware or phishing attacks. & Jul 2025 \\
+    Threat Classification & Classify network activity and system behavior into threat categories, such as malware or phishing attacks. & Aug 2025 \\
     \hline
-    \textbf{Phase 4: System Evaluation and Optimization} & & August - September 2025 \\
+    \textbf{Phase 4: System Evaluation and Optimization} & & September - October 2025 \\
     \hline
-    Model Validation & Validate models using test datasets, fine-tuning hyperparameters to maximize performance. & Aug 2025 \\
+    Model Validation & Validate models using test datasets, fine-tuning hyperparameters to maximize performance. & Sep 2025 \\
     \hline
-    Deployment Readiness & Prepare the validated model for deployment in a simulated mining environment and conduct stress testing. & Aug 2025 \\
+    Deployment Readiness & Prepare the validated model for deployment in a simulated mining environment and conduct stress testing. & Sep 2025 \\
     \hline
-    Experimental Setup & Establish a controlled testing environment, including data injection and monitoring for system performance assessment. & Sep 2025 \\
+    Experimental Setup & Establish a controlled testing environment, including data injection and monitoring for system performance assessment. & Oct 2025 \\
     \hline
     \textbf{Phase 5: Continuous Learning and Model Refinement} & & October 2025 \\
     \hline
@@ -785,125 +878,38 @@ The final phase documents the research findings and provides guidelines for prac
 \section{Detailed Timeline by Month}
 
 \begin{itemize}
-    \item \textbf{December 2024 - February 2025:} Requirements analysis, literature review, and ethical/regulatory assessment.
-    \item \textbf{March - April 2025:} Data collection, preprocessing, and labeling for specific threat categories.
-    \item \textbf{May - July 2025:} Selection, testing, and training of machine learning models, along with threat classification.
-    \item \textbf{August - September 2025:} Model validation, deployment preparation, and experimental setup.
+    \item \textbf{February - March 2025:} Requirements analysis, literature review, and ethical/regulatory assessment.
+    \item \textbf{April - May 2025:} Data collection, preprocessing, and labeling for specific threat categories.
+    \item \textbf{June - August 2025:} Selection, testing, and training of machine learning models, along with threat classification.
+    \item \textbf{September - October 2025:} Model validation, deployment preparation, and experimental setup.
     \item \textbf{October 2025:} Hyperparameter optimization and continuous learning integration.
     \item \textbf{November 2025:} Documentation of findings, preparation of final report, and recommendations for implementation.
 \end{itemize}
 
 
-% This chapter outlines the schedule of work for the development of a Cyber Threat Intelligence (CTI) framework tailored to the mining industry. The research will take place over a 12-month period from December 1, 2024, to November 30, 2025. Each phase is allocated specific tasks to ensure timely progress and effective completion.
 
-% \section{Overview}
-% The research schedule is divided into several phases: Initial Planning and Literature Review, Pre-Modelling Data Preparation, Modelling and Machine Learning, System Evaluation and Optimization, and Documentation and Final Reporting. Each phase is structured to address the primary objectives of developing, testing, and validating a CTI framework designed for the unique cybersecurity needs of the mining industry.
-
-% \section{Research Schedule}
-
-% % \usepackage{pdflscape}
-% % \usepackage{pdflscape}
-
-% \begin{landscape}
-% \begin{table}[p]
-%     \centering
-%     \caption{Research Schedule from December 2024 to November 2025}
-%     \label{table:schedule_of_work}
-%     \begin{tabular}{|p{4cm}|p{12cm}|p{3cm}|}
-%         \hline
-%         \textbf{Phase} & \textbf{Activity Description} & \textbf{Timeline} \\
-%         \hline\hline
-%         \textbf{Phase 1: Initial Planning and Literature Review} & & December 2024 - February 2025 \\
-%         \hline
-%         Requirements Analysis and Stakeholder Engagement & Conduct initial meetings with stakeholders to gather specific cybersecurity needs and define project scope. & Dec 2024 - Jan 2025 \\
-%         \hline
-%         Literature Review & Review relevant literature on CTI frameworks, machine learning models, and cybersecurity in the mining industry to establish a theoretical foundation. & Jan 2025 - Feb 2025 \\
-%         \hline
-%         Ethical and Regulatory Review & Review data privacy regulations and ethical guidelines relevant to cybersecurity in the mining industry. & Feb 2025 \\
-%         \hline
-%         \textbf{Phase 2: Pre-Modelling and Data Preparation} & & March - April 2025 \\
-%         \hline
-%         Data Collection & Collect data from various sources, including network logs, OSINT feeds, and threat intelligence reports. & Mar 2025 \\
-%         \hline
-%         Data Preprocessing & Clean, transform, and normalize data. Apply feature extraction techniques such as PCA for noise reduction. & Mar - Apr 2025 \\
-%         \hline
-%         Goal Definition and Data Labeling & Define specific objectives for CTI (e.g., ransomware detection) and label historical data as normal or malicious. & Apr 2025 \\
-%         \hline
-%         \textbf{Phase 3: Modelling and Machine Learning} & & May - July 2025 \\
-%         \hline
-%         Model Selection and Initial Testing & Select initial machine learning models and test them on sample data to determine suitability. & May 2025 \\
-%         \hline
-%         Feature Engineering & Refine and optimize feature sets based on exploratory data analysis. & May - Jun 2025 \\
-%         \hline
-%         Model Training and Evaluation & Train models using supervised and unsupervised learning on labeled data. Evaluate metrics such as accuracy, precision, and recall. & Jun - Jul 2025 \\
-%         \hline
-%         Threat Classification & Classify network activity or system behavior into specific threat categories, such as malware or phishing. & Jul 2025 \\
-%         \hline
-%         \textbf{Phase 4: Post-Modelling and System Evaluation} & & August - September 2025 \\
-%         \hline
-%         Model Validation & Validate models with test datasets, refining hyperparameters to optimize performance. & Aug 2025 \\
-%         \hline
-%         Deployment Readiness & Prepare the validated model for deployment in a simulated mining environment and conduct stress testing. & Aug 2025 \\
-%         \hline
-%         Experimental Setup & Define and set up a controlled environment, including test data injection and system monitoring. & Sep 2025 \\
-%         \hline
-%         \textbf{Phase 5: Optimization and Continuous Learning} & & October 2025 \\
-%         \hline
-%         Hyperparameter Optimization & Optimize hyperparameters using grid search or Bayesian optimization to improve model accuracy. & Oct 2025 \\
-%         \hline
-%         Continuous Learning & Implement mechanisms for incremental learning to update the model with new threat data. & Oct 2025 \\
-%         \hline
-%         \textbf{Phase 6: Documentation and Final Reporting} & & November 2025 \\
-%         \hline
-%         Results Documentation & Summarize findings, including insights on CTI framework performance and areas for improvement. & Nov 2025 \\
-%         \hline
-%         Recommendations and Practical Implementation & Provide guidelines and recommendations for deploying the CTI framework in the mining industry. & Nov 2025 \\
-%         \hline
-%         Final Report Preparation & Prepare and submit the final research report, including methodologies, results, and future directions. & Nov 2025 \\
-%         \hline
-%     \end{tabular} 
-% \end{table}
-% \end{landscape}
-
-  
 % Chapter 5
 \chapter{Conclusion}
+
 The CTI System for the Mining Industry aims to bridge the gap between the mining industry's unique operational demands and the growing need for robust cybersecurity measures. By developing a tailored CTI System, the study seeks to provide an architecture design of a CTI System. The development of the CTI System will enhance the ability to detect and respond to cyber threats proactively in the mining industry. The CTI System's integration of advanced data analytics and machine learning will offer more precise and real-time action against evolving threats. Additionally, this research will address ethical and regulatory concerns and ensure the proposed solution is effective and compliant with mining industry standards.
 The findings from this research will contribute significantly to both the mining industry and the broader field of cybersecurity. By providing a specialized system for cyber threat intelligence, this study will help safeguard critical mining operations, protecting both assets and the environment. The lessons learned and the methodologies developed can serve as a model for other industries facing similar cybersecurity challenges, marking a step forward in the ongoing effort to secure vital industrial infrastructure.
 
+\section*{Future Directions}
 
+While this research marks an important step in securing mining operations, there are several key areas for future research and development that will further enhance the capabilities of CTI systems in the mining industry. 
 
-% \LaTeX\ decides how to place images. It also does the referencing for you as seen in \Cref{fig:thing1}. If you have subimages, they should have their own captions and labels -- look into the subfig or subfigure packages.
+\begin{itemize}
+    \item \textbf{Integration with Emerging Technologies:} Future work could explore the integration of \textbf{blockchain} and \textbf{quantum computing} to improve data integrity and secure threat intelligence sharing. Blockchain could enable tamper-proof threat data exchange, while quantum computing may present new challenges and opportunities for encryption and threat detection.
+    
+    \item \textbf{Advanced Threat Modeling:} As cyber threats evolve, there is a need for \textbf{dynamic and adaptive threat models}. Future research could focus on enhancing machine learning algorithms to predict complex, multi-stage cyberattacks and automate responses in real time.
+    
+    \item \textbf{Interoperability Across Industries:} Given the convergence of industrial technologies, future CTI frameworks could benefit from \textbf{cross-sector interoperability}, allowing mining companies to share threat intelligence with other critical sectors, such as energy and manufacturing, to improve collaborative defense.
+    
+    \item \textbf{Scalability in Remote Operations:} As mining operations expand in remote locations, research could focus on designing \textbf{scalable, decentralized CTI systems} that work effectively with low-bandwidth environments and limited access to centralized infrastructure.
+    
+    \item \textbf{Human-Centric Security:} Finally, the \textbf{human factor} in cybersecurity cannot be overlooked. Future research could explore \textbf{training and awareness programs} for miners and cybersecurity personnel, ensuring they can effectively interpret and act on CTI insights.
+\end{itemize}
 
-% Including the image with correct file extension
-
-
-% Figure captions are at the bottom. Table titles are at the top of the table as seen in \Vref{tab:tab1}. 
-
-% \begin{table}[p]
-%   \centering
-%   \caption{Table Name}
-%   \label{tab:tab1}
-%   \begin{tabular}{cc}
-%       \hline
-%       Col1 & Col2\\
-%       \hline\hline 
-%       R0,C0 & R0,C1 \\ 
-%       R1,C0 & R1,C1 \\ 
-%       \hline
-%   \end{tabular} 
-% \end{table}
-
-% \chapter{Some Referencing Tricks}
-% CleverRef and VarioRef are helpful:
-% \begin{itemize}
-%   \item Normal Ref: See Figure {\reffig:thing1}
-%   \item CleverRef: See \Cref{fig:thing1} and \Cref{tab:tab1}
-%   \item CleverRef+VarioRef: See \Vref{fig:thing1} and \Vref{tab:tab1}
-% \end{itemize}
-
-% \chapter{IDE/Editors}
-% Overleaf has a great online editor for latex. Use it. 
 
 \appendix
 \chapter{Extra Stuff}\label{app:extra}
